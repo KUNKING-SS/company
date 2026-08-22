@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>昆明领升企业管理咨询有限公司 | 专注企业管理与培训赋能</title>
+<style>
+/* ===== 全局 ===== */
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-card: #1a2238;
+  --accent: #3b82f6;
+  --accent-glow: #60a5fa;
+  --gold: #d4af37;
+  --text-primary: #f0f4ff;
+  --text-secondary: #94a3b8;
+  --border: rgba(255,255,255,0.08);
+  --gradient-1: linear-gradient(135deg, #0a0e1a 0%, #1a2238 50%, #0a0e1a 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+a { text-decoration: none; color: inherit; }
+section { position: relative; }
+
+/* ===== 导航栏 ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(10,14,26,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; }
+.nav-logo .logo-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--gradient-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: #fff;
+  box-shadow: 0 0 20px rgba(59,130,246,0.4);
+}
+.nav-logo .logo-text span { color: var(--accent-glow); }
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+  font-size: 15px; color: var(--text-secondary);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px;
+  background: var(--gradient-accent); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  padding: 10px 28px; border-radius: 50px;
+  background: var(--gradient-accent); color: #fff; font-size: 14px; font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(59,130,246,0.5); }
+.nav-mobile { display: none; font-size: 26px; cursor: pointer; color: var(--text-primary); }
+
+/* ===== Hero ===== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 5% 80px;
+  background: var(--gradient-1);
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(59,130,246,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(212,175,55,0.05) 0%, transparent 50%);
+  animation: drift 20s linear infinite;
+}
+@keyframes drift {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-30px, 20px); }
+  100% { transform: translate(0,0); }
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 50px;
+  background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3);
+  font-size: 13px; color: var(--accent-glow); margin-bottom: 32px;
+}
+.hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-glow); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero h1 {
+  font-size: 56px; font-weight: 800; line-height: 1.2; margin-bottom: 24px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #60a5fa 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, #d4af37 0%, #f5d061 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero .subtitle {
+  font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto;
+}
+.hero-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  padding: 16px 40px; border-radius: 50px; background: var(--gradient-accent); color: #fff;
+  font-size: 16px; font-weight: 600; transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(59,130,246,0.6); }
+.btn-outline {
+  padding: 16px 40px; border-radius: 50px; background: transparent; color: var(--text-primary);
+  font-size: 16px; font-weight: 600; border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.btn-outline:hover { border-color: var(--accent); background: rgba(59,130,246,0.08); }
+.hero-stats {
+  display: flex; gap: 60px; justify-content: center; margin-top: 70px; flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 40px; font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa 0%, #d4af37 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-stat .label { font-size: 14px; color: var(--text-secondary); margin-top: 6px; }
+
+/* ===== 通用 Section ===== */
+.section-pad { padding: 100px 5%; }
+.section-head { text-align: center; margin-bottom: 60px; }
+.section-tag {
+  display: inline-block; padding: 6px 18px; border-radius: 50px;
+  background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+  font-size: 13px; color: var(--accent-glow); margin-bottom: 16px;
+}
+.section-head h2 {
+  font-size: 40px; font-weight: 800; margin-bottom: 16px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #94a3b8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-head p { font-size: 17px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
+
+/* ===== 关于我们 ===== */
+.about { background: var(--bg-secondary); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  max-width: 1200px; margin: 0 auto;
+}
+.about-visual {
+  position: relative; border-radius: 20px; overflow: hidden;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #1a2238 0%, #0a0e1a 100%);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.about-visual .ring {
+  position: absolute; border-radius: 50%; border: 1px solid rgba(59,130,246,0.15);
+}
+.about-visual .ring:nth-child(1) { width: 80%; height: 80%; animation: spin 30s linear infinite; }
+.about-visual .ring:nth-child(2) { width: 60%; height: 60%; animation: spin 20s linear infinite reverse; border-color: rgba(212,175,55,0.1); }
+.about-visual .ring:nth-child(3) { width: 40%; height: 40%; animation: spin 15s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.about-visual .core {
+  position: relative; z-index: 2; text-align: center;
+}
+.about-visual .core .icon { font-size: 48px; margin-bottom: 12px; }
+.about-visual .core .text { font-size: 18px; font-weight: 700; color: var(--accent-glow); }
+.about-visual .core .sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+.about-text h3 { font-size: 30px; font-weight: 700; margin-bottom: 20px; line-height: 1.4; }
+.about-text h3 span { color: var(--accent-glow); }
+.about-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+.about-feature {
+  display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-primary);
+}
+.about-feature .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+/* ===== 服务领域 ===== */
+.services { background: var(--bg-primary); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  max-width: 1200px; margin: 0 auto;
+}
+.service-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 36px 28px; transition: all 0.4s; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s;
+}
+.service-card:hover { transform: translateY(-8px); border-color: rgba(59,130,246,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
+  background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+}
+.service-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.service-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.service-card ul { list-style: none; margin-top: 16px; }
+.service-card ul li { font-size: 13px; color: var(--text-secondary); padding: 5px 0; padding-left: 20px; position: relative; }
+.service-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+/* ===== 为什么选择我们 ===== */
+.why { background: var(--bg-secondary); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  max-width: 1200px; margin: 0 auto;
+}
+.why-card {
+  text-align: center; padding: 36px 20px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+  transition: all 0.4s;
+}
+.why-card:hover { transform: translateY(-6px); border-color: rgba(59,130,246,0.3); }
+.why-card .num {
+  font-size: 36px; font-weight: 800; margin-bottom: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #d4af37 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.why-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.why-card p { font-size: 14px; color: var(--text-secondary); }
+
+/* ===== 服务流程 ===== */
+.process { background: var(--bg-primary); }
+.process-timeline {
+  max-width: 1000px; margin: 0 auto; position: relative;
+}
+.process-timeline::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(180deg, transparent, var(--accent), transparent);
+  transform: translateX(-50%);
+}
+.process-step {
+  display: flex; align-items: center; margin-bottom: 50px; position: relative;
+}
+.process-step:nth-child(odd) { justify-content: flex-end; }
+.process-step:nth-child(odd) .process-content { text-align: right; margin-right: 50px; }
+.process-step:nth-child(even) .process-content { text-align: left; margin-left: 50px; }
+.process-content {
+  width: 45%; padding: 28px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; transition: all 0.3s;
+}
+.process-content:hover { border-color: rgba(59,130,246,0.3); transform: scale(1.02); }
+.process-step .step-dot {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--gradient-accent); border: 4px solid var(--bg-primary);
+  z-index: 2; box-shadow: 0 0 15px rgba(59,130,246,0.5);
+}
+.process-content .step-num { font-size: 13px; color: var(--accent-glow); font-weight: 700; margin-bottom: 8px; }
+.process-content h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.process-content p { font-size: 14px; color: var(--text-secondary); }
+
+/* ===== 数据成果 ===== */
+.results { background: var(--bg-secondary); }
+.results-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  max-width: 1200px; margin: 0 auto;
+}
+.result-card {
+  text-align: center; padding: 40px 20px; border-radius: 16px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.result-card:hover { border-color: rgba(59,130,246,0.3); }
+.result-card .icon { font-size: 32px; margin-bottom: 16px; }
+.result-card .num {
+  font-size: 42px; font-weight: 800; margin-bottom: 8px;
+  background: linear-gradient(135deg, #60a5fa 0%, #d4af37 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.result-card .label { font-size: 14px; color: var(--text-secondary); }
+
+/* ===== 联系我们 ===== */
+.contact { background: var(--bg-primary); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+  max-width: 1100px; margin: 0 auto; align-items: center;
+}
+.contact-info h3 { font-size: 30px; font-weight: 700; margin-bottom: 20px; }
+.contact-info p { color: var(--text-secondary); margin-bottom: 30px; font-size: 16px; }
+.contact-items { display: flex; flex-direction: column; gap: 20px; }
+.contact-item { display: flex; align-items: center; gap: 16px; }
+.contact-item .ci-icon {
+  width: 50px; height: 50px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.contact-item .ci-text .label { font-size: 13px; color: var(--text-secondary); }
+.contact-item .ci-text .value { font-size: 16px; font-weight: 600; }
+.contact-form {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 40px;
+}
+.contact-form h3 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 12px 16px; border-radius: 10px;
+  background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary);
+  font-size: 15px; font-family: inherit; transition: border-color 0.3s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none; border-color: var(--accent);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.contact-form button {
+  width: 100%; padding: 14px; border-radius: 10px; border: none;
+  background: var(--gradient-accent); color: #fff; font-size: 16px; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+}
+.contact-form button:hover { box-shadow: 0 6px 20px rgba(59,130,246,0.5); }
+.form-success {
+  display: none; text-align: center; padding: 30px;
+}
+.form-success.show { display: block; }
+.form-success .check {
+  width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 16px;
+  background: rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center;
+  font-size: 30px; color: var(--accent-glow);
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  background: var(--bg-secondary); padding: 60px 5% 30px;
+  border-top: 1px solid var(--border);
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+  max-width: 1200px; margin: 0 auto;
+}
+.footer-brand .nav-logo { margin-bottom: 16px; }
+.footer-brand p { color: var(--text-secondary); font-size: 14px; max-width: 350px; }
+.footer-col h5 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; transition: color 0.3s; }
+.footer-col a:hover { color: var(--accent-glow); }
+.footer-bottom {
+  max-width: 1200px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-size: 13px; color: var(--text-secondary); }
+.footer-bottom .icp { font-size: 12px; color: var(--text-secondary); }
+
+/* ===== 动画入场 ===== */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-mobile { display: block; }
+  .hero h1 { font-size: 36px; }
+  .hero .subtitle { font-size: 16px; }
+  .hero-stats { gap: 30px; }
+  .hero-stat .num { font-size: 30px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .services-grid, .why-grid, .results-grid { grid-template-columns: 1fr 1fr; }
+  .process-timeline::before { left: 20px; }
+  .process-step { justify-content: flex-end !important; }
+  .process-step:nth-child(odd) .process-content { text-align: left; margin-right: 0; margin-left: 50px; }
+  .process-step .step-dot { left: 20px; }
+  .process-content { width: 85%; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .section-head h2 { font-size: 28px; }
+}
+@media (max-width: 600px) {
+  .services-grid, .why-grid, .results-grid, .about-features { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+  .hero-actions { flex-direction: column; }
+  .section-pad { padding: 60px 5%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 导航栏 ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <div class="logo-icon">领</div>
+    <div class="logo-text">领升咨询<span> · LINKRISE</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">关于我们</a>
+    <a href="#services">服务领域</a>
+    <a href="#why">核心优势</a>
+    <a href="#process">服务流程</a>
+    <a href="#results">成果数据</a>
+    <a href="#contact">联系我们</a>
+  </div>
+  <a href="#contact" class="nav-cta">免费咨询</a>
+  <div class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('show-mobile')">☰</div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">昆明领升企业管理咨询有限公司</div>
+    <h1>引领变革 · <span class="highlight">升维发展</span><br>企业管理与培训赋能专家</h1>
+    <p class="subtitle">立足云南，面向全国，专注为成长型企业提供战略规划、组织管控、人才培训、数字化转型一站式管理咨询服务</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">探索服务</a>
+      <a href="#contact" class="btn-outline">预约咨询</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">100%</div>
+        <div class="label">方案定制化</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">15+</div>
+        <div class="label">行业经验</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">98%</div>
+        <div class="label">客户满意度</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于我们 ===== -->
+<section class="about section-pad" id="about">
+  <div class="about-grid">
+    <div class="about-visual fade-up">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="core">
+        <div class="icon">◈</div>
+        <div class="text">领升咨询</div>
+        <div class="sub">LINKRISE Consulting</div>
+      </div>
+    </div>
+    <div class="about-text fade-up">
+      <div class="section-tag" style="margin-bottom:16px">关于我们</div>
+      <h3>以专业赋能企业，用智慧<span>引领成长</span></h3>
+      <p>昆明领升企业管理咨询有限公司是一家扎根云南、面向全国的专业化管理咨询机构。我们致力于为成长型企业提供从战略规划到落地执行的全链条管理赋能服务，帮助企业突破发展瓶颈，实现可持续增长。</p>
+      <p>公司秉承"引领变革、升维发展"的核心理念，依托资深行业专家团队和丰富的实战经验，已为多家企业提供了定制化的管理咨询与培训解决方案。</p>
+      <div class="about-features">
+        <div class="about-feature"><div class="dot"></div>战略驱动</div>
+        <div class="about-feature"><div class="dot"></div>实战落地</div>
+        <div class="about-feature"><div class="dot"></div>数据决策</div>
+        <div class="about-feature"><div class="dot"></div>持续陪跑</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 服务领域 ===== -->
+<section class="services section-pad" id="services">
+  <div class="section-head fade-up">
+    <div class="section-tag">服务领域</div>
+    <h2>六大核心服务板块</h2>
+    <p>从战略到执行，从组织到人才，为企业提供全方位管理赋能</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">◈</div>
+      <h4>战略规划咨询</h4>
+      <p>帮助企业明确发展方向与路径，制定可落地的中长期战略规划。</p>
+      <ul>
+        <li>企业发展战略诊断</li>
+        <li>商业模式设计与优化</li>
+        <li>三年/五年战略规划</li>
+        <li>年度经营计划制定</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">◇</div>
+      <h4>组织管控设计</h4>
+      <p>构建科学高效的组织架构与管控体系，提升企业运营效率。</p>
+      <ul>
+        <li>组织架构设计优化</li>
+        <li>部门职责与岗位说明书</li>
+        <li>授权体系与流程制度</li>
+        <li>绩效管理体系搭建</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">◆</div>
+      <h4>企业管理培训</h4>
+      <p>定制化培训方案，提升中高层管理能力与团队执行力。</p>
+      <ul>
+        <li>中高层领导力训练</li>
+        <li>团队执行力提升</li>
+        <li>项目管理实战培训</li>
+        <li>新晋管理者赋能计划</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">★</div>
+      <h4>人力资源咨询</h4>
+      <p>优化人才结构，建立有竞争力的人才吸引、培养与保留体系。</p>
+      <ul>
+        <li>人才盘点与梯队建设</li>
+        <li>薪酬激励体系设计</li>
+        <li>培训体系搭建</li>
+        <li>企业文化体系建设</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">●</div>
+      <h4>数字化转型咨询</h4>
+      <p>帮助企业规划数字化转型路径，用技术驱动管理与业务升级。</p>
+      <ul>
+        <li>数字化成熟度评估</li>
+        <li>数字化转型路径规划</li>
+        <li>信息化系统选型</li>
+        <li>数据管理体系搭建</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">▲</div>
+      <h4>专项咨询服务</h4>
+      <p>针对企业特定需求提供专题咨询，解决关键管理痛点。</p>
+      <ul>
+        <li>企业合规与风险管控</li>
+        <li>招投标管理体系优化</li>
+        <li>成本管控与精益运营</li>
+        <li>并购重组管理整合</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 核心优势 ===== -->
+<section class="why section-pad" id="why">
+  <div class="section-head fade-up">
+    <div class="section-tag">核心优势</div>
+    <h2>为什么选择领升</h2>
+    <p>四大核心优势，确保每一次咨询都能创造真实价值</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <div class="num">01</div>
+      <h4>实战经验</h4>
+      <p>核心团队拥有15年+企业管理咨询实战经验，深谙云南本地企业痛点</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="num">02</div>
+      <h4>定制方案</h4>
+      <p>拒绝模板化交付，每一份方案都基于深度调研，量身定制</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="num">03</div>
+      <h4>陪跑落地</h4>
+      <p>不止于方案输出，提供从规划到执行的全周期陪跑式服务</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="num">04</div>
+      <h4>资源整合</h4>
+      <p>联动政府、行业、技术多方资源，为企业发展提供生态支持</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 服务流程 ===== -->
+<section class="process section-pad" id="process">
+  <div class="section-head fade-up">
+    <div class="section-tag">服务流程</div>
+    <h2>五步法标准化交付</h2>
+    <p>科学严谨的咨询流程，确保项目高质量落地</p>
+  </div>
+  <div class="process-timeline">
+    <div class="process-step fade-up">
+      <div class="process-content">
+        <div class="step-num">STEP 01</div>
+        <h4>需求诊断</h4>
+        <p>深入企业现场，通过访谈、问卷、数据分析等方式全面诊断企业管理现状与核心痛点</p>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-content">
+        <div class="step-num">STEP 02</div>
+        <h4>方案设计</h4>
+        <p>基于诊断结果，定制化管理咨询方案，经多轮沟通研讨后定稿</p>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-content">
+        <div class="step-num">STEP 03</div>
+        <h4>培训赋能</h4>
+        <p>面向管理层和执行层开展针对性培训，确保团队理解并掌握方案核心理念</p>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-content">
+        <div class="step-num">STEP 04</div>
+        <h4>落地陪跑</h4>
+        <p>全程跟进方案执行，定期复盘纠偏，协助解决实施中的具体问题</p>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-content">
+        <div class="step-num">STEP 05</div>
+        <h4>评估优化</h4>
+        <p>项目结束后进行效果评估，输出总结报告，并提供持续优化建议</p>
+      </div>
+      <div class="step-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 数据成果 ===== -->
+<section class="results section-pad" id="results">
+  <div class="section-head fade-up">
+    <div class="section-tag">成果与数据</div>
+    <h2>用数据说话</h2>
+    <p>每一次合作，都是一份信任与成长</p>
+  </div>
+  <div class="results-grid">
+    <div class="result-card fade-up">
+      <div class="icon">◈</div>
+      <div class="num">100%</div>
+      <div class="label">方案定制化交付</div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="icon">★</div>
+      <div class="num">98%</div>
+      <div class="label">客户满意度评分</div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="icon">◆</div>
+      <div class="num">15+</div>
+      <div class="label">覆盖行业领域</div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="icon">▲</div>
+      <div class="num">3-12月</div>
+      <div class="label">陪跑服务周期</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系我们 ===== -->
+<section class="contact section-pad" id="contact">
+  <div class="section-head fade-up">
+    <div class="section-tag">联系我们</div>
+    <h2>开启您的企业升维之旅</h2>
+    <p>无论是战略规划、组织优化还是管理培训，领升期待与您深度对话</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h3>昆明领升企业管理咨询有限公司</h3>
+      <p>我们提供首次免费需求诊断服务，欢迎企业负责人联系我们，共同探讨企业发展路径。</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text">
+            <div class="label">公司地址</div>
+            <div class="value">云南省昆明市（具体地址详询）</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-text">
+            <div class="label">联系电话</div>
+            <div class="value">请通过表单留言预约</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">✉</div>
+          <div class="ci-text">
+            <div class="label">邮箱</div>
+            <div class="value">service@linkrise.com.cn</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div class="ci-text">
+            <div class="label">服务时间</div>
+            <div class="value">周一至周五 09:00 - 18:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form fade-up" id="contactForm">
+      <h3>免费需求咨询</h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>您的称呼 *</label>
+          <input type="text" name="name" required placeholder="请输入您的姓名">
+        </div>
+        <div class="form-group">
+          <label>企业名称</label>
+          <input type="text" name="company" placeholder="请输入企业名称">
+        </div>
+        <div class="form-group">
+          <label>联系电话 *</label>
+          <input type="tel" name="phone" required placeholder="请输入手机号码">
+        </div>
+        <div class="form-group">
+          <label>咨询方向</label>
+          <select name="service">
+            <option value="">请选择</option>
+            <option>战略规划咨询</option>
+            <option>组织管控设计</option>
+            <option>企业管理培训</option>
+            <option>人力资源咨询</option>
+            <option>数字化转型咨询</option>
+            <option>专项咨询服务</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>需求描述</label>
+          <textarea name="message" placeholder="简要描述您的企业现状与咨询需求"></textarea>
+        </div>
+        <button type="submit">提交咨询需求</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h3 style="margin-bottom:8px">提交成功！</h3>
+        <p style="color:var(--text-secondary);font-size:14px">我们将在1个工作日内与您联系，请保持电话畅通。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="logo-icon">领</div>
+        <div class="logo-text">领升咨询<span> · LINKRISE</span></div>
+      </div>
+      <p>昆明领升企业管理咨询有限公司，专注为成长型企业提供战略规划、组织管控、人才培训、数字化转型一站式管理咨询服务。引领变革，升维发展。</p>
+    </div>
+    <div class="footer-col">
+      <h5>服务领域</h5>
+      <a href="#services">战略规划咨询</a>
+      <a href="#services">组织管控设计</a>
+      <a href="#services">企业管理培训</a>
+      <a href="#services">数字化转型咨询</a>
+    </div>
+    <div class="footer-col">
+      <h5>快速导航</h5>
+      <a href="#about">关于我们</a>
+      <a href="#why">核心优势</a>
+      <a href="#process">服务流程</a>
+      <a href="#results">成果数据</a>
+    </div>
+    <div class="footer-col">
+      <h5>联系方式</h5>
+      <a href="#contact">免费咨询</a>
+      <a href="#contact">预约诊断</a>
+      <a href="#contact">合作洽谈</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 昆明领升企业管理咨询有限公司 版权所有</p>
+    <p class="icp">滇ICP备XXXXXXXX号</p>
+  </div>
+</footer>
+
+<script>
+// 导航栏滚动效果
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    navbar.style.padding = '12px 5%';
+    navbar.style.background = 'rgba(10,14,26,0.95)';
+  } else {
+    navbar.style.padding = '18px 5%';
+    navbar.style.background = 'rgba(10,14,26,0.85)';
+  }
+});
+
+// 滚动入场动画
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(function(el) {
+  observer.observe(el);
+});
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      // 移动端关闭菜单
+      var navLinks = document.querySelector('.nav-links');
+      if (navLinks.classList.contains('show-mobile')) {
+        navLinks.classList.remove('show-mobile');
+      }
+    }
+  });
+});
+
+// 表单提交
+function submitForm(e) {
+  e.preventDefault();
+  var form = e.target;
+  var formBox = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  form.style.display = 'none';
+  success.classList.add('show');
+  setTimeout(function() {
+    form.style.display = 'block';
+    success.classList.remove('show');
+    form.reset();
+  }, 4000);
+}
+
+// 移动端菜单样式
+var style = document.createElement('style');
+style.textContent = '.nav-links.show-mobile{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,14,26,0.98);padding:20px 5%;gap:16px;border-bottom:1px solid var(--border)}';
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
