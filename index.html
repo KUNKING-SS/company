@@ -3,290 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="LEADRISE 领升——销售领导力发展与高绩效销售组织建设。培养领导者，打造高绩效销售团队。">
 <title>LEADRISE 领升｜销售领导力发展专家</title>
+<meta name="description" content="LEADRISE领升，从企业诊断到销售领导力训练与陪跑，帮助成长型企业建立持续增长的销售组织能力。">
 <style>
-:root{
-  --navy:#061321; --navy2:#0a1c2d; --gold:#c99a3d; --gold2:#e2bb6b;
-  --white:#fff; --muted:#aeb9c5; --line:rgba(255,255,255,.10);
-  --bg:#f5f7f9; --text:#16202b;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.7}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,92%);margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(6,19,33,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:56px;height:56px;object-fit:cover;border-radius:8px}
-.brand-text strong{display:block;color:#fff;font-size:18px;letter-spacing:2px}
-.brand-text span{font-size:10px;color:var(--gold2);letter-spacing:2px}
-nav{display:flex;gap:28px;color:#d8e0e7;font-size:14px}
-nav a:hover{color:var(--gold2)}
-.nav-cta{padding:10px 18px;border:1px solid rgba(226,187,107,.65);color:var(--gold2);border-radius:3px}
-.hero{min-height:760px;background:
- radial-gradient(circle at 75% 30%,rgba(201,154,61,.18),transparent 28%),
- linear-gradient(135deg,#061321 0%,#0a1c2d 55%,#081522 100%);
- color:#fff;padding-top:76px;display:flex;align-items:center;overflow:hidden;position:relative}
-.hero:after{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(201,154,61,.14);border-radius:50%;right:-160px;top:110px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative;z-index:2}
-.eyebrow{color:var(--gold2);letter-spacing:4px;font-size:13px;margin-bottom:18px}
-h1{font-size:clamp(44px,6vw,76px);line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
-h1 em{font-style:normal;color:var(--gold2)}
-.hero p{font-size:19px;color:#c8d2dc;max-width:620px;margin-bottom:34px}
-.buttons{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 25px;border-radius:3px;font-size:14px;font-weight:700}
-.btn-gold{background:var(--gold);color:#07131f}
-.btn-outline{border:1px solid rgba(255,255,255,.28);color:#fff}
-.hero-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);padding:34px;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.25)}
-.hero-card .mini{font-size:11px;color:var(--gold2);letter-spacing:3px;margin-bottom:18px}
-.hero-card h2{font-size:30px;line-height:1.3;margin-bottom:18px}
-.hero-card p{font-size:15px;margin:0;color:#aeb9c5}
-.stats{background:#0b1d2e;color:#fff;border-top:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:30px 20px;text-align:center;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{font-size:34px;color:var(--gold2);display:block}
-.stat span{font-size:12px;color:#aeb9c5;letter-spacing:1px}
-section{padding:105px 0}
-.section-head{margin-bottom:48px}
-.kicker{font-size:12px;color:#b17e28;letter-spacing:3px;font-weight:800;margin-bottom:10px}
-.section-head h2{font-size:42px;line-height:1.2;color:#101b25;margin-bottom:14px}
-.section-head p{color:#6f7a84;max-width:700px}
-.services{background:var(--bg)}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service{background:#fff;padding:32px;border:1px solid #e5e9ed;min-height:230px;transition:.25s}
-.service:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(10,25,40,.08);border-color:#d4b16c}
-.num{font-size:12px;color:var(--gold);letter-spacing:2px}
-.service h3{font-size:21px;margin:22px 0 12px}
-.service p{font-size:14px;color:#6f7882}
-.dark{background:var(--navy);color:#fff}
-.dark .section-head h2{color:#fff}
-.dark .section-head p{color:#aeb9c5}
-.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.level{border:1px solid var(--line);padding:34px;background:rgba(255,255,255,.025)}
-.level .tag{color:var(--gold2);font-size:12px;letter-spacing:2px}
-.level h3{font-size:24px;margin:13px 0}
-.level p{font-size:14px;color:#aeb9c5}
-.level ul{margin-top:20px;padding-left:18px;color:#d5dde5;font-size:14px}
-.level li{margin:8px 0}
-.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
-.step{padding:25px;border-top:2px solid #d7b46b;position:relative}
-.step b{display:block;font-size:12px;color:#b17e28;letter-spacing:2px;margin-bottom:14px}
-.step h3{font-size:18px;margin-bottom:8px}
-.step p{font-size:13px;color:#737d87}
-.before-after{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.ba{padding:38px;background:#f7f8fa;border:1px solid #e6eaee}
-.ba.after{background:#0b1d2e;color:#fff;border-color:#0b1d2e}
-.ba h3{margin-bottom:22px;font-size:22px}
-.ba ul{list-style:none}
-.ba li{padding:12px 0;border-bottom:1px solid rgba(120,130,140,.16);font-size:14px}
-.ba.after li{border-color:rgba(255,255,255,.1);color:#d6dfe7}
-.industries{display:flex;flex-wrap:wrap;gap:10px}
-.industry{padding:9px 15px;border:1px solid #dfe4e8;color:#56616b;font-size:13px;background:#fff}
-.cta{background:linear-gradient(120deg,#0a1c2d,#061321);color:#fff;text-align:center;padding:95px 0}
-.cta h2{font-size:42px;margin-bottom:14px}
-.cta p{color:#aeb9c5;margin-bottom:28px}
-footer{background:#04101c;color:#8794a0;padding:28px 0;font-size:12px}
-.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}
-@media(max-width:850px){
- nav{display:none} .hero{min-height:700px} .hero-grid,.before-after{grid-template-columns:1fr}
- .service-grid,.levels{grid-template-columns:1fr 1fr} .process{grid-template-columns:1fr 1fr}
- .stats-grid{grid-template-columns:1fr 1fr} .stat{border-bottom:1px solid var(--line)}
- h1{font-size:50px} section{padding:75px 0}
-}
-@media(max-width:560px){
- .service-grid,.levels,.process{grid-template-columns:1fr} .hero-card{display:none}
- h1{font-size:43px} .section-head h2,.cta h2{font-size:32px}
- .footer{flex-direction:column;align-items:flex-start}
-}
+:root{--navy:#071522;--navy2:#0d2232;--gold:#c9a45c;--white:#f7f8fa;--muted:#aeb9c4;--line:rgba(255,255,255,.12);--card:#10283a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Microsoft YaHei",sans-serif;background:var(--navy);color:var(--white);line-height:1.7}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
+header{position:sticky;top:0;z-index:20;background:rgba(7,21,34,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px;font-weight:700;letter-spacing:1px}.brand img{height:42px;width:auto;object-fit:contain}.brand span{font-size:15px}.menu{display:flex;gap:24px;font-size:14px;color:#dbe2e8}.menu a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:12px 22px;border:1px solid var(--gold);color:var(--gold);border-radius:3px;font-weight:700}.btn.fill{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero{min-height:700px;display:flex;align-items:center;background:radial-gradient(circle at 80% 30%,rgba(201,164,92,.14),transparent 32%),linear-gradient(135deg,#071522,#0b1e2d)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px;font-weight:700}.hero h1{font-size:58px;line-height:1.12;margin:18px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{font-size:18px;color:var(--muted);max-width:700px}.actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.hero-card{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:30px;border-radius:8px}.hero-card .big{font-size:38px;color:var(--gold);font-weight:800}.hero-card p{font-size:14px;margin:6px 0 20px}.hero-card .rule{height:1px;background:var(--line);margin:18px 0}
+section{padding:92px 0}.section-head{margin-bottom:42px}.kicker{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:700}.section-head h2{font-size:38px;margin:8px 0}.section-head p{color:var(--muted);max-width:760px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);padding:28px;border-radius:7px}.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}.num{color:var(--gold);font-size:14px;font-weight:800}
+.pain{background:#091a28}.pain .card{min-height:185px}.solution{border-top:1px solid var(--line)}.price{font-size:27px;color:var(--gold);font-weight:800;margin:10px 0}.card ul{padding-left:18px;color:#d5dde4;font-size:14px}.card li{margin:7px 0}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.feature-box{border-left:2px solid var(--gold);padding-left:24px}.feature-box h3{margin-top:0;font-size:25px}.feature-box p{color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.step{padding:24px 18px;border-top:1px solid var(--gold);position:relative}.step:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;background:var(--gold);border-radius:50%}.step b{display:block;color:var(--gold);font-size:13px;margin-bottom:7px}
+.local{background:linear-gradient(120deg,#0d2232,#071522)}.local h2{font-size:42px}.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.tag{border:1px solid var(--line);padding:8px 14px;color:#dce3e8;font-size:13px}
+.lmhi{border:1px solid rgba(201,164,92,.35);background:linear-gradient(135deg,rgba(201,164,92,.08),rgba(255,255,255,.02))}
+.cta{background:var(--gold);color:var(--navy);text-align:center}.cta p{max-width:720px;margin:10px auto 28px}.cta .btn{border-color:var(--navy);color:var(--navy)}
+footer{padding:40px 0;color:#8d9aa6;border-top:1px solid var(--line);font-size:13px}.footer-grid{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){.menu{display:none}.hero-grid,.feature{grid-template-columns:1fr}.hero h1{font-size:42px}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.hero{min-height:620px}}
+@media(max-width:560px){.wrap{padding:0 18px}.grid4{grid-template-columns:1fr}.hero h1{font-size:36px}section{padding:68px 0}.brand img{height:36px}.hero-card{padding:22px}}
+</style>
 
-.diagnosis{background:#fff}.diagnosis-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
-.diagnosis h2,.about-company h2{font-size:42px;line-height:1.25;margin-bottom:20px}.diagnosis p,.about-company p{color:#68737e;max-width:680px}
-.diag-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.diag-points div{border:1px solid #e2e7eb;padding:17px 18px;display:flex;align-items:center;gap:15px}.diag-points b{color:#b17e28;font-size:13px}.diag-points span{font-size:14px}
-.diag-card{background:linear-gradient(145deg,#0a1c2d,#061321);padding:42px;color:#fff;border:1px solid #193248;box-shadow:0 25px 60px rgba(6,19,33,.18)}.diag-card-top{color:var(--gold2);font-size:11px;letter-spacing:3px;margin-bottom:18px}.diag-card h3{font-size:30px;line-height:1.3;margin-bottom:16px}.diag-card p{color:#aeb9c5;margin-bottom:25px}
-.cases{background:#f5f7f9}.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.case{background:#fff;padding:31px;border:1px solid #e2e7eb;min-height:255px}.case>span{font-size:10px;letter-spacing:2px;color:#b17e28}.case h3{font-size:20px;line-height:1.4;margin:20px 0 13px}.case p{font-size:14px;color:#6d7781}.case-tag{display:inline-block;margin-top:22px;padding:5px 10px;border:1px solid #e0c58e;color:#9b6e22;font-size:11px}
-.lmhi{padding-bottom:100px}.lmhi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.lmhi-box{border:1px solid rgba(255,255,255,.12);padding:27px 15px;text-align:center;background:rgba(255,255,255,.03)}.lmhi-box b{display:block;color:var(--gold2);font-size:21px;margin-bottom:7px}.lmhi-box span{font-size:12px;color:#aeb9c5}
-.about-company{background:#fff}.about-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:80px;align-items:center}.about-logo{display:flex;justify-content:center}.about-logo img{width:min(330px,75%);border-radius:10px;box-shadow:0 25px 55px rgba(6,19,33,.15)}.about-company p{margin-bottom:12px}.signature{margin-top:25px;color:#b17e28;letter-spacing:3px;font-size:13px;font-weight:700}
-@media(max-width:850px){.diagnosis-grid,.about-grid{grid-template-columns:1fr}.case-grid{grid-template-columns:1fr 1fr}.lmhi-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.case-grid,.lmhi-grid{grid-template-columns:1fr}.diag-points{grid-template-columns:1fr}.diagnosis h2,.about-company h2{font-size:32px}}
+<style>
+.float-contact{position:fixed;right:20px;bottom:22px;z-index:50;display:flex;gap:8px;flex-direction:column}
+.float-contact a{background:#c9a45c;color:#071522;padding:10px 14px;border-radius:4px;font-size:13px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.25)}
+.float-contact a.alt{background:#10283a;color:#f7f8fa;border:1px solid rgba(201,164,92,.45)}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.faq details{background:#10283a;border:1px solid rgba(255,255,255,.1);padding:18px 20px;border-radius:6px}
+.faq summary{cursor:pointer;font-weight:700}.faq p{color:#aeb9c4;font-size:14px;margin-bottom:0}
+.partner{border:1px solid rgba(201,164,92,.3);background:linear-gradient(135deg,rgba(201,164,92,.08),rgba(255,255,255,.02))}
+.form-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:850px;margin:30px auto 0}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:13px 14px;background:#fff;color:#17212b;border:0;border-radius:3px;font-size:14px}
+.form-box textarea{min-height:100px;grid-column:1/-1}
+.form-box button{grid-column:1/-1;justify-self:center;padding:13px 30px;border:1px solid #071522;background:#071522;color:#c9a45c;font-weight:800;border-radius:3px;cursor:pointer}
+@media(max-width:700px){.faq,.form-box{grid-template-columns:1fr}.form-box textarea,.form-box button{grid-column:auto}.float-contact{right:12px;bottom:12px}}
 </style>
 </head>
 <body>
+<div class="float-contact">
+  <a href="#diagnosis">预约企业诊断</a>
+  <a class="alt" href="mailto:service@leadrise.com.cn">发送咨询邮件</a>
+</div>
+
 <header>
-  <div class="container nav">
+  <div class="wrap nav">
     <a class="brand" href="#top">
-      <img src="logo.jpg" alt="LEADRISE 领升 Logo">
-      <div class="brand-text"><strong>LEADRISE</strong><span>领 越 未 来 · 升 级 组 织</span></div>
+      <img src="logo.jpg" alt="LEADRISE 领升">
+      <span>LEADRISE · 领升</span>
     </a>
-    <nav>
-      <a href="#about">关于领升</a><a href="#services">核心服务</a><a href="#courses">课程体系</a><a href="#diagnosis">企业诊断</a><a href="#cases">场景</a>
-      <a href="#method">服务流程</a><a href="#contact" class="nav-cta">预约诊断</a>
+    <nav class="menu">
+      <a href="#pain">老板痛点</a><a href="#solutions">解决方案</a><a href="#diagnosis">企业诊断</a><a href="#packages">服务套餐</a><a href="#cases">应用场景</a><a href="#contact">联系我们</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 <section class="hero">
- <div class="container hero-grid">
+<div class="wrap hero-grid">
   <div>
-   <div class="eyebrow">SALES LEADERSHIP DEVELOPMENT</div>
-   <h1>培养领导者<br><em>打造高绩效销售团队</em></h1>
-   <p>LEADRISE 领升专注销售领导力发展，帮助企业从“个人能打”走向“团队能打”，建立可复制、可持续的销售增长能力。</p>
-   <div class="buttons"><a class="btn btn-gold" href="#contact">预约企业诊断</a><a class="btn btn-outline" href="#services">了解核心服务</a></div>
+    <div class="eyebrow">LEAD BETTER. RISE HIGHER.</div>
+    <h1>培养领导者<br><em>打造高绩效销售团队</em></h1>
+    <p>LEADRISE 领升，不是单纯卖培训课程，而是从企业诊断出发，帮助成长型企业建立持续增长的销售组织能力。</p>
+    <div class="actions"><a class="btn fill" href="#diagnosis">预约企业诊断</a><a class="btn" href="#packages">查看服务方案</a></div>
   </div>
   <div class="hero-card">
-   <div class="mini">LEAD BETTER. RISE HIGHER.</div>
-   <h2>从培养一个销售领导者，到打造一支高绩效销售团队。</h2>
-   <p>领导力可培养 · 团队决定结果 · 过程驱动结果 · 成长永无止境</p>
+    <div class="big">从“人”到“组织”</div>
+    <p>让优秀销售成为管理者，让管理者成为真正的团队领导者。</p>
+    <div class="rule"></div>
+    <strong>核心定位</strong>
+    <p>销售领导力发展 · 高绩效团队打造 · 销售管理体系 · 销售赋能与陪跑</p>
   </div>
- </div>
+</div>
 </section>
 
-<div class="stats"><div class="container stats-grid">
- <div class="stat"><b>10+</b><span>年销售领导力专注</span></div>
- <div class="stat"><b>200+</b><span>客户企业</span></div>
- <div class="stat"><b>5000+</b><span>培训学员</span></div>
- <div class="stat"><b>30+</b><span>覆盖行业</span></div>
+<section id="pain" class="pain">
+<div class="wrap">
+  <div class="section-head"><div class="kicker">FOR BUSINESS OWNERS</div><h2>很多企业的问题，不是“没有销售”</h2><p>而是销售组织没有形成稳定、可复制、可持续的能力。</p></div>
+  <div class="grid4">
+    <div class="card"><div class="num">01</div><h3>业绩靠个人</h3><p>优秀销售离开后，客户与业绩容易受到影响，团队难以复制个人能力。</p></div>
+    <div class="card"><div class="num">02</div><h3>主管不会带人</h3><p>从销售高手转为管理者后，仍然习惯亲自做业务，而不是通过团队获得结果。</p></div>
+    <div class="card"><div class="num">03</div><h3>过程不可控</h3><p>目标、客户、商机与跟进过程缺少统一机制，管理依赖经验和感觉。</p></div>
+    <div class="card"><div class="num">04</div><h3>培训难落地</h3><p>课堂结束后缺少行动、复盘和陪跑，知识难以转化为日常管理行为。</p></div>
+  </div>
+</div>
+</section>
+
+<section id="solutions">
+<div class="wrap">
+ <div class="section-head"><div class="kicker">LEADRISE SOLUTIONS</div><h2>从诊断开始，解决真正的业务问题</h2><p>围绕销售组织、管理者与团队能力，形成“诊断—训练—行动—复盘”的闭环。</p></div>
+ <div class="feature">
+   <div class="feature-box"><h3>不是卖一堂课</h3><p>我们关注培训之后发生什么：管理者是否改变、团队是否行动、过程是否可管理、能力是否能够复制。</p></div>
+   <div class="feature-box"><h3>而是建立一套能力</h3><p>将个人能力沉淀为团队方法，将管理经验沉淀为机制，让企业逐步形成自己的销售组织能力。</p></div>
+ </div>
+</div>
+</section>
+
+<section id="diagnosis" class="pain">
+<div class="wrap">
+ <div class="section-head"><div class="kicker">FREE BUSINESS DIAGNOSIS</div><h2>先诊断，再训练</h2><p>先找到问题，再决定培训什么。初步沟通后，可围绕销售目标、团队结构、管理流程、人才能力等维度形成诊断方向。</p></div>
+ <div class="grid3">
+  <div class="card"><div class="num">01</div><h3>业务现状</h3><p>了解企业业务模式、销售目标、客户结构及当前增长压力。</p></div>
+  <div class="card"><div class="num">02</div><h3>团队能力</h3><p>观察销售人员与管理者在目标、客户、过程、沟通和带队方面的能力表现。</p></div>
+  <div class="card"><div class="num">03</div><h3>管理机制</h3><p>梳理目标管理、过程管理、复盘机制与人才培养的现状。</p></div>
+ </div>
+</div>
+</section>
+
+<section id="lmhi">
+<div class="wrap">
+ <div class="section-head"><div class="kicker">LMHI · CONCEPT</div><h2>LMHI 企业管理健康度</h2><p>LEADRISE 正在探索以管理与领导力维度衡量企业组织状态的指标体系，可作为企业诊断与长期改善的工具。</p></div>
+ <div class="card lmhi">
+  <h3>LMHI = Leadership & Management Health Index</h3>
+  <p>拟围绕领导力、团队能力、销售过程、组织机制等维度建立企业管理健康度观察框架。当前属于项目概念阶段，具体指标、权重、算法及行业基准将在后续研究与实践中进一步确定。</p>
+ </div>
+</div>
+</section>
+
+<section id="packages" class="solution">
+<div class="wrap">
+ <div class="section-head"><div class="kicker">SERVICE PACKAGES</div><h2>三档企业服务方案</h2><p>以下为官网展示用的方案框架与建议起始价格，正式项目根据企业规模、需求和服务范围进行定制。</p></div>
+ <div class="grid3">
+  <div class="card"><div class="num">01 · 基础训练</div><h3>销售能力基础训练</h3><div class="price">¥19,800 起</div><ul><li>企业需求访谈</li><li>销售能力基础训练</li><li>1次管理复盘</li><li>项目总结报告</li></ul><a class="btn" href="#contact">咨询方案</a></div>
+  <div class="card"><div class="num">02 · 团队提升</div><h3>高绩效团队方案</h3><div class="price">¥39,800 起</div><ul><li>企业销售组织诊断</li><li>销售团队训练</li><li>管理者训练</li><li>行动计划与复盘</li><li>阶段性陪跑</li></ul><a class="btn" href="#contact">咨询方案</a></div>
+  <div class="card"><div class="num">03 · 组织升级</div><h3>销售组织升级方案</h3><div class="price">¥68,000 起</div><ul><li>组织与销售体系诊断</li><li>领导力发展项目</li><li>团队能力训练</li><li>管理机制设计</li><li>3个月陪跑复盘</li></ul><a class="btn" href="#contact">咨询方案</a></div>
+ </div>
+</div>
+</section>
+
+<section id="cases" class="pain">
+<div class="wrap">
+ <div class="section-head"><div class="kicker">BUSINESS SCENARIOS</div><h2>适用于不同成长阶段的企业</h2><p>根据企业实际业务场景组合训练、诊断与陪跑内容。</p></div>
+ <div class="grid4">
+  <div class="card"><h3>酒店与文旅</h3><p>围绕营收目标、销售团队、客户开发与管理者能力提升。</p></div>
+  <div class="card"><h3>企业服务</h3><p>围绕大客户开发、复杂销售、决策链与销售管理。</p></div>
+  <div class="card"><h3>贸易与零售</h3><p>围绕销售流程、团队目标、客户经营与复盘机制。</p></div>
+  <div class="card"><h3>成长型中小企业</h3><p>围绕老板、销售负责人和核心团队建立可复制的增长能力。</p></div>
+ </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+ <div class="section-head"><div class="kicker">LEADERSHIP DEVELOPMENT</div><h2>三层销售领导力课程体系</h2><p>从一线销售基本功，到大客户攻单，再到销售团队管理，逐级完成能力跃迁。</p></div>
+ <div class="grid3">
+  <div class="card"><div class="num">L1 · 基础级</div><h3>新兵营 · 销售基本功</h3><p>适合新销售。聚焦销售心态、客户沟通、需求发现、异议处理、成交与时间管理。</p></div>
+  <div class="card"><div class="num">L2 · 进阶级</div><h3>骨干班 · 大客户攻单</h3><p>适合有一定经验的销售。聚焦大客户策略、复杂销售、决策链、竞争分析与价值呈现。</p></div>
+  <div class="card"><div class="num">L3 · 将帅营</div><h3>销售团队管理</h3><p>面向销售主管、经理与负责人，聚焦目标、过程、辅导、复盘和团队管理能力。</p></div>
+ </div>
+</div>
+</section>
+
+<section class="local" id="local">
+<div class="wrap">
+ <div class="kicker">KUNMING · YUNNAN</div>
+ <h2>从昆明出发，服务成长型企业</h2>
+ <p style="color:var(--muted);max-width:720px">聚焦昆明及云南企业市场，深入理解本地企业经营场景，为企业家、销售负责人和管理团队提供诊断、训练与陪跑服务。</p>
+ <div class="tags"><span class="tag">昆明企业</span><span class="tag">中小企业</span><span class="tag">销售团队</span><span class="tag">企业家</span><span class="tag">管理者</span></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+ <div class="section-head"><div class="kicker">OUR JOURNEY</div><h2>从第一次沟通，到持续改善</h2></div>
+ <div class="timeline">
+  <div class="step"><b>01</b>免费初步沟通</div>
+  <div class="step"><b>02</b>销售组织诊断</div>
+  <div class="step"><b>03</b>项目方案</div>
+  <div class="step"><b>04</b>项目实施</div>
+  <div class="step"><b>05</b>复盘与优化</div>
+ </div>
+</div>
+</section>
+
+
+<section>
+<div class="wrap">
+ <div class="section-head"><div class="kicker">STRATEGIC PARTNERSHIP</div><h2>LEADRISE × 众行培训</h2>
+ <p>围绕企业客户开发与培训项目合作，探索“课程资源 + 本地客户开发 + 企业诊断 + 项目交付”的合作模式。</p></div>
+ <div class="card partner">
+   <h3>合作方向</h3>
+   <p>LEADRISE 负责本地企业客户触达、需求沟通与前端诊断；结合合作方课程与专家资源，为企业客户提供更完整的培训解决方案。具体合作边界、产品、价格与结算方式以双方正式协议为准。</p>
+ </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-head"><div class="kicker">FAQ</div><h2>企业客户常见问题</h2></div>
+<div class="faq">
+<details><summary>LEADRISE 只做培训吗？</summary><p>定位不仅是课程培训，也包括企业诊断、销售领导力训练、团队能力建设和阶段性陪跑。</p></details>
+<details><summary>企业规模不大也可以做吗？</summary><p>可以根据企业规模、团队人数和实际问题选择合适的项目范围，正式方案以诊断和沟通结果为基础。</p></details>
+<details><summary>第一次沟通需要准备什么？</summary><p>可准备企业基本情况、销售团队规模、当前销售目标及最希望解决的问题。</p></details>
+<details><summary>服务价格是否固定？</summary><p>网站展示的是方案框架与建议起始价格，正式项目会根据服务内容、人数和周期确定。</p></details>
 </div></div>
-
-<section id="about">
- <div class="container">
-  <div class="section-head"><div class="kicker">WHY LEADRISE</div><h2>不是上一堂课，<br>而是让组织真正发生改变</h2><p>围绕销售领导者、销售团队和销售管理体系，建立从诊断到训练、从训练到陪跑的完整成长路径。</p></div>
-  <div class="before-after">
-   <div class="ba"><h3>个人贡献者</h3><ul>
-    <li>依赖个人能力拿结果</li><li>亲自盯业务、亲自解决问题</li><li>关注个人客户与个人目标</li><li>时间被业务事务填满</li><li>更多依靠经验与直觉决策</li>
-   </ul></div>
-   <div class="ba after"><h3>团队领导者</h3><ul>
-    <li>通过团队获得持续结果</li><li>懂得授权、赋能与辅导</li><li>关注团队与组织目标</li><li>把时间投入管理、复盘与规划</li><li>通过流程与数据提升决策质量</li>
-   </ul></div>
-  </div>
- </div>
 </section>
-
-<section id="services" class="services">
- <div class="container">
-  <div class="section-head"><div class="kicker">CORE SERVICES</div><h2>六大核心服务</h2><p>以销售组织为核心，把领导力训练、团队建设、销售体系与业务落地连接起来。</p></div>
-  <div class="service-grid">
-   <div class="service"><span class="num">01</span><h3>销售领导力训练</h3><p>帮助销售主管、经理、总监完成从“业务高手”到“团队领导者”的能力跃迁。</p></div>
-   <div class="service"><span class="num">02</span><h3>高绩效团队打造</h3><p>围绕目标、角色、机制、辅导与执行，建立团队持续拿结果的能力。</p></div>
-   <div class="service"><span class="num">03</span><h3>销售管理体系</h3><p>梳理销售流程、目标管理、过程管理、复盘机制和团队管理工具。</p></div>
-   <div class="service"><span class="num">04</span><h3>销售赋能培训</h3><p>覆盖客户沟通、需求挖掘、异议处理、大客户销售与成交等关键能力。</p></div>
-   <div class="service"><span class="num">05</span><h3>销售组织诊断</h3><p>从组织、管理、人才与销售过程多个维度识别增长瓶颈。</p></div>
-   <div class="service"><span class="num">06</span><h3>陪跑与落地</h3><p>培训之后持续跟进，通过行动、复盘和管理机制推动能力真正转化。</p></div>
-  </div>
- </div>
-</section>
-
-<section id="courses" class="dark">
- <div class="container">
-  <div class="section-head"><div class="kicker">LEADRISE ACADEMY</div><h2>三级课程体系</h2><p>从销售新人到销售骨干，再到销售管理者，形成递进式能力发展路径。</p></div>
-  <div class="levels">
-   <div class="level"><span class="tag">L1 · 基础级</span><h3>新兵营 · 销售基本功</h3><p>适合销售新人</p><ul><li>销售 mindset 与职业认知</li><li>客户拜访与沟通</li><li>需求发现与痛点识别</li><li>异议处理与成交</li><li>时间管理与客户分类</li></ul></div>
-   <div class="level"><span class="tag">L2 · 进阶级</span><h3>骨干班 · 大客户攻单</h3><p>适合1–3年销售经验</p><ul><li>大客户策略与决策链</li><li>复杂销售管理</li><li>多线程推进与竞争分析</li><li>高层对话与价值呈现</li><li>招投标策略</li></ul></div>
-   <div class="level"><span class="tag">L3 · 将帅营</span><h3>销售团队管理</h3><p>适合销售经理 / 总监</p><ul><li>目标与绩效管理</li><li>团队辅导与反馈</li><li>授权与人才培养</li><li>销售过程管理</li><li>复盘与组织能力建设</li></ul></div>
-  </div>
- </div>
-</section>
-
-<section id="method">
- <div class="container">
-  <div class="section-head"><div class="kicker">DELIVERY METHOD</div><h2>五步落地路径</h2><p>让咨询、培训与企业实际业务连接起来。</p></div>
-  <div class="process">
-   <div class="step"><b>STEP 01</b><h3>企业诊断</h3><p>了解组织、团队、业务与管理现状。</p></div>
-   <div class="step"><b>STEP 02</b><h3>问题定位</h3><p>识别影响团队绩效的关键问题。</p></div>
-   <div class="step"><b>STEP 03</b><h3>方案设计</h3><p>形成针对企业实际场景的项目方案。</p></div>
-   <div class="step"><b>STEP 04</b><h3>训练实施</h3><p>通过课程、工具与行动训练完成能力输入。</p></div>
-   <div class="step"><b>STEP 05</b><h3>陪跑复盘</h3><p>持续跟踪行动、复盘结果并推动机制落地。</p></div>
-  </div>
- </div>
-</section>
-
-<section class="services">
- <div class="container">
-  <div class="section-head"><div class="kicker">INDUSTRIES</div><h2>服务多元企业场景</h2><p>课程与咨询可以根据企业行业、规模和销售模式进行定制。</p></div>
-  <div class="industries">
-   <span class="industry">酒店与文旅</span><span class="industry">房地产</span><span class="industry">建筑</span>
-   <span class="industry">物流与供应链</span><span class="industry">新能源</span><span class="industry">快消</span>
-   <span class="industry">企业服务</span><span class="industry">汽车</span><span class="industry">农业科技</span>
-   <span class="industry">贸易零售</span><span class="industry">媒体广告</span><span class="industry">咨询服务</span>
-  </div>
- </div>
-</section>
-
-
-<section id="diagnosis" class="diagnosis">
- <div class="container diagnosis-grid">
-  <div>
-   <div class="kicker">LEADRISE BUSINESS DIAGNOSIS</div>
-   <h2>先诊断，再训练；<br>先找到问题，再解决问题。</h2>
-   <p>针对企业销售组织，从目标、团队、管理、流程与领导力等维度进行结构化诊断，帮助管理者看清当前瓶颈与下一步行动重点。</p>
-   <div class="diag-points">
-    <div><b>01</b><span>组织与团队现状</span></div>
-    <div><b>02</b><span>销售管理机制</span></div>
-    <div><b>03</b><span>领导者能力</span></div>
-    <div><b>04</b><span>销售过程与执行</span></div>
-   </div>
-  </div>
-  <div class="diag-card">
-   <div class="diag-card-top">FREE FIRST DIAGNOSIS</div>
-   <h3>企业销售领导力<br>初步诊断</h3>
-   <p>适合企业老板、销售负责人、人力资源负责人预约。</p>
-   <a class="btn btn-gold" href="mailto:service@leadrise.com.cn?subject=预约LEADRISE企业诊断">立即预约</a>
-  </div>
- </div>
-</section>
-<section id="cases" class="cases">
- <div class="container">
-  <div class="section-head"><div class="kicker">PROJECT SCENARIOS</div><h2>我们解决什么问题</h2><p>以下为官网规划中的典型业务场景，正式发布时可替换为经授权的真实客户案例与数据。</p></div>
-  <div class="case-grid">
-   <article class="case"><span>SCENARIO 01</span><h3>销售经理“自己能干，团队不会干”</h3><p>从个人贡献者向团队领导者转型，建立目标、授权、辅导与复盘机制。</p><div class="case-tag">销售领导力</div></article>
-   <article class="case"><span>SCENARIO 02</span><h3>销售团队业绩依赖少数明星</h3><p>梳理销售过程与管理机制，推动经验沉淀为团队可复制的方法。</p><div class="case-tag">高绩效团队</div></article>
-   <article class="case"><span>SCENARIO 03</span><h3>培训结束后，业务没有变化</h3><p>把课堂训练连接到行动、复盘和管理场景，推动培训成果向业务转化。</p><div class="case-tag">陪跑落地</div></article>
-  </div>
- </div>
-</section>
-<section id="lmhi" class="dark lmhi">
- <div class="container">
-  <div class="section-head"><div class="kicker">LMHI · LEADERSHIP & MANAGEMENT HEALTH INDEX</div><h2>企业管理健康度，<br>用结构化指标看见</h2><p>如果未来与企业家协会等机构合作，可将企业诊断进一步形成标准化指标体系。当前官网仅作为产品概念展示，具体指标、算法和基准值待正式定义。</p></div>
-  <div class="lmhi-grid">
-   <div class="lmhi-box"><b>组织</b><span>结构与协同</span></div>
-   <div class="lmhi-box"><b>领导</b><span>管理者能力</span></div>
-   <div class="lmhi-box"><b>销售</b><span>过程与执行</span></div>
-   <div class="lmhi-box"><b>人才</b><span>培养与梯队</span></div>
-   <div class="lmhi-box"><b>机制</b><span>目标与复盘</span></div>
-  </div>
- </div>
-</section>
-<section id="about-company" class="about-company">
- <div class="container about-grid">
-  <div class="about-logo"><img src="logo.jpg" alt="LEADRISE 领升"></div>
-  <div>
-   <div class="kicker">ABOUT LEADRISE</div>
-   <h2>一家专注销售领导力发展的企业咨询培训机构</h2>
-   <p>LEADRISE 领升围绕销售领导者、销售团队与销售管理体系，为企业提供诊断、培训、咨询与陪跑服务。</p>
-   <p>核心方向不是单一课程交付，而是帮助企业把领导力、团队能力与销售结果连接起来。</p>
-   <div class="signature">LEAD BETTER. RISE HIGHER.</div>
-  </div>
- </div>
-</section>
-
 <section id="contact" class="cta">
- <div class="container">
-  <div class="kicker">START WITH A DIAGNOSIS</div>
-  <h2>企业的增长，取决于领导者的成长</h2>
-  <p>预约 LEADRISE 企业销售领导力诊断，找到团队增长的关键突破点。</p>
-  <a class="btn btn-gold" href="mailto:service@leadrise.com.cn">预约企业诊断</a>
- </div>
+<div class="wrap">
+ <div class="kicker">START WITH A DIAGNOSIS</div>
+ <h2>企业的增长，取决于领导者与组织能力的成长</h2>
+ <p>如果您正在面对销售增长、团队管理、人才培养或销售体系问题，欢迎与 LEADRISE 进行一次初步沟通。</p>
+ <a class="btn" href="mailto:service@leadrise.com.cn?subject=LEADRISE企业诊断咨询">预约企业诊断</a>
+<form class="form-box" action="mailto:service@leadrise.com.cn" method="post" enctype="text/plain">
+<input name="company" placeholder="企业名称" required>
+<input name="name" placeholder="联系人" required>
+<input name="phone" placeholder="联系电话" required>
+<select name="need">
+<option value="">请选择主要需求</option>
+<option>销售团队训练</option>
+<option>销售管理者训练</option>
+<option>企业销售组织诊断</option>
+<option>大客户销售</option>
+<option>销售体系/机制建设</option>
+<option>其他</option>
+</select>
+<textarea name="message" placeholder="请简单描述目前最希望解决的问题"></textarea>
+<button type="submit">提交企业诊断申请</button>
+</form>
+
+</div>
 </section>
 </main>
 
 <footer>
- <div class="container footer">
-  <div>© 2026 LEADRISE 领升企业咨询有限公司</div>
-  <div>service@leadrise.com.cn · 云南省昆明市</div>
- </div>
+<div class="wrap footer-grid">
+<div><strong>LEADRISE · 领升</strong><br>销售领导力发展专家</div>
+<div>云南省昆明市（具体地址详询）<br>service@leadrise.com.cn · 周一至周五 09:00–18:00</div>
+<div>© 2026 领升 LEADRISE</div>
+</div>
 </footer>
 </body>
 </html>
