@@ -3,1445 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>领升LEADRISE | 培养领导者，打造高绩效销售团队</title>
+<meta name="description" content="LEADRISE 领升——销售领导力发展与高绩效销售组织建设。培养领导者，打造高绩效销售团队。">
+<title>LEADRISE 领升｜销售领导力发展专家</title>
 <style>
-/* ===== 全局 ===== */
-:root {
-  --bg-primary: #0a0e1a;
-  --bg-secondary: #111827;
-  --bg-card: #1a2238;
-  --bg-card-hover: #1e2940;
-  --accent: #3b82f6;
-  --accent-glow: #60a5fa;
-  --gold: #d4af37;
-  --gold-light: #f5d061;
-  --gold-dark: #b8941f;
-  --text-primary: #f0f4ff;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
-  --border: rgba(255,255,255,0.08);
-  --border-gold: rgba(212,175,55,0.2);
-  --gradient-1: linear-gradient(135deg, #0a0e1a 0%, #1a2238 50%, #0a0e1a 100%);
-  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f5d061 100%);
-  --gradient-gold-dark: linear-gradient(135deg, #b8941f 0%, #d4af37 100%);
+:root{
+  --navy:#061321; --navy2:#0a1c2d; --gold:#c99a3d; --gold2:#e2bb6b;
+  --white:#fff; --muted:#aeb9c5; --line:rgba(255,255,255,.10);
+  --bg:#f5f7f9; --text:#16202b;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  line-height: 1.7;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(6,19,33,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+.brand-text strong{display:block;color:#fff;font-size:18px;letter-spacing:2px}
+.brand-text span{font-size:10px;color:var(--gold2);letter-spacing:2px}
+nav{display:flex;gap:28px;color:#d8e0e7;font-size:14px}
+nav a:hover{color:var(--gold2)}
+.nav-cta{padding:10px 18px;border:1px solid rgba(226,187,107,.65);color:var(--gold2);border-radius:3px}
+.hero{min-height:760px;background:
+ radial-gradient(circle at 75% 30%,rgba(201,154,61,.18),transparent 28%),
+ linear-gradient(135deg,#061321 0%,#0a1c2d 55%,#081522 100%);
+ color:#fff;padding-top:76px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(201,154,61,.14);border-radius:50%;right:-160px;top:110px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative;z-index:2}
+.eyebrow{color:var(--gold2);letter-spacing:4px;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(44px,6vw,76px);line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
+h1 em{font-style:normal;color:var(--gold2)}
+.hero p{font-size:19px;color:#c8d2dc;max-width:620px;margin-bottom:34px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 25px;border-radius:3px;font-size:14px;font-weight:700}
+.btn-gold{background:var(--gold);color:#07131f}
+.btn-outline{border:1px solid rgba(255,255,255,.28);color:#fff}
+.hero-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);padding:34px;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.hero-card .mini{font-size:11px;color:var(--gold2);letter-spacing:3px;margin-bottom:18px}
+.hero-card h2{font-size:30px;line-height:1.3;margin-bottom:18px}
+.hero-card p{font-size:15px;margin:0;color:#aeb9c5}
+.stats{background:#0b1d2e;color:#fff;border-top:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 20px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{font-size:34px;color:var(--gold2);display:block}
+.stat span{font-size:12px;color:#aeb9c5;letter-spacing:1px}
+section{padding:105px 0}
+.section-head{margin-bottom:48px}
+.kicker{font-size:12px;color:#b17e28;letter-spacing:3px;font-weight:800;margin-bottom:10px}
+.section-head h2{font-size:42px;line-height:1.2;color:#101b25;margin-bottom:14px}
+.section-head p{color:#6f7a84;max-width:700px}
+.services{background:var(--bg)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:#fff;padding:32px;border:1px solid #e5e9ed;min-height:230px;transition:.25s}
+.service:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(10,25,40,.08);border-color:#d4b16c}
+.num{font-size:12px;color:var(--gold);letter-spacing:2px}
+.service h3{font-size:21px;margin:22px 0 12px}
+.service p{font-size:14px;color:#6f7882}
+.dark{background:var(--navy);color:#fff}
+.dark .section-head h2{color:#fff}
+.dark .section-head p{color:#aeb9c5}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.level{border:1px solid var(--line);padding:34px;background:rgba(255,255,255,.025)}
+.level .tag{color:var(--gold2);font-size:12px;letter-spacing:2px}
+.level h3{font-size:24px;margin:13px 0}
+.level p{font-size:14px;color:#aeb9c5}
+.level ul{margin-top:20px;padding-left:18px;color:#d5dde5;font-size:14px}
+.level li{margin:8px 0}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.step{padding:25px;border-top:2px solid #d7b46b;position:relative}
+.step b{display:block;font-size:12px;color:#b17e28;letter-spacing:2px;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{font-size:13px;color:#737d87}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ba{padding:38px;background:#f7f8fa;border:1px solid #e6eaee}
+.ba.after{background:#0b1d2e;color:#fff;border-color:#0b1d2e}
+.ba h3{margin-bottom:22px;font-size:22px}
+.ba ul{list-style:none}
+.ba li{padding:12px 0;border-bottom:1px solid rgba(120,130,140,.16);font-size:14px}
+.ba.after li{border-color:rgba(255,255,255,.1);color:#d6dfe7}
+.industries{display:flex;flex-wrap:wrap;gap:10px}
+.industry{padding:9px 15px;border:1px solid #dfe4e8;color:#56616b;font-size:13px;background:#fff}
+.cta{background:linear-gradient(120deg,#0a1c2d,#061321);color:#fff;text-align:center;padding:95px 0}
+.cta h2{font-size:42px;margin-bottom:14px}
+.cta p{color:#aeb9c5;margin-bottom:28px}
+footer{background:#04101c;color:#8794a0;padding:28px 0;font-size:12px}
+.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}
+@media(max-width:850px){
+ nav{display:none} .hero{min-height:700px} .hero-grid,.before-after{grid-template-columns:1fr}
+ .service-grid,.levels{grid-template-columns:1fr 1fr} .process{grid-template-columns:1fr 1fr}
+ .stats-grid{grid-template-columns:1fr 1fr} .stat{border-bottom:1px solid var(--line)}
+ h1{font-size:50px} section{padding:75px 0}
 }
-a { text-decoration: none; color: inherit; }
-section { position: relative; }
-
-/* ===== 全局装饰背景 ===== */
-.bg-grid {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
-  background-image:
-    linear-gradient(rgba(212,175,55,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,175,55,0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-
-/* ===== 导航栏 ===== */
-.navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 18px 5%;
-  display: flex; justify-content: space-between; align-items: center;
-  background: rgba(10,14,26,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: padding 0.3s;
-}
-.nav-logo { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; }
-.nav-logo .logo-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: linear-gradient(135deg, #0d1426 0%, #162040 100%);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(212,175,55,0.15);
-}
-.nav-logo .logo-icon svg { width: 32px; height: 32px; }
-.nav-logo .logo-icon::after {
-  content: ''; position: absolute; inset: -3px; border-radius: 13px;
-  border: 1px solid rgba(212,175,55,0.2);
-}
-.nav-logo .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-.nav-logo .logo-text .name { font-size: 18px; }
-.nav-logo .logo-text .name span { color: var(--gold); }
-.nav-logo .logo-text .slogan { font-size: 11px; color: var(--text-secondary); font-weight: 400; }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a {
-  font-size: 15px; color: var(--text-secondary);
-  transition: color 0.3s; position: relative;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px;
-  background: var(--gradient-gold); transition: width 0.3s;
-}
-.nav-links a:hover::after { width: 100%; }
-.nav-cta {
-  padding: 10px 28px; border-radius: 50px;
-  background: var(--gradient-gold); color: #0a0e1a; font-size: 14px; font-weight: 700;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-}
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212,175,55,0.5); }
-.nav-mobile { display: none; font-size: 26px; cursor: pointer; color: var(--text-primary); }
-
-/* ===== Hero ===== */
-.hero {
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 120px 5% 80px;
-  background: var(--gradient-1);
-  overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(59,130,246,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 70% 60%, rgba(212,175,55,0.07) 0%, transparent 50%),
-              radial-gradient(circle at 50% 80%, rgba(212,175,55,0.04) 0%, transparent 40%);
-  animation: drift 20s linear infinite;
-}
-.hero::after {
-  content: ''; position: absolute; top: 10%; right: 5%; width: 300px; height: 300px;
-  border: 1px solid rgba(212,175,55,0.06); border-radius: 50%;
-  animation: float-slow 8s ease-in-out infinite;
-}
-@keyframes drift {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-30px, 20px); }
-  100% { transform: translate(0,0); }
-}
-@keyframes float-slow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, 20px); }
-}
-.hero-content { position: relative; z-index: 2; max-width: 900px; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 20px; border-radius: 50px;
-  background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3);
-  font-size: 13px; color: var(--gold-light); margin-bottom: 32px;
-}
-.hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-light); animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-.hero h1 {
-  font-size: 56px; font-weight: 800; line-height: 1.2; margin-bottom: 16px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #60a5fa 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero h1 .highlight {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero .hero-en {
-  font-size: 22px; font-weight: 600; color: var(--text-secondary); letter-spacing: 3px; margin-bottom: 28px;
-  position: relative; display: inline-block;
-}
-.hero .hero-en::before, .hero .hero-en::after {
-  content: ''; position: absolute; top: 50%; width: 40px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.hero .hero-en::before { right: 100%; margin-right: 16px; }
-.hero .hero-en::after { left: 100%; margin-left: 16px; }
-.hero .hero-en span { color: var(--gold); }
-.hero .subtitle {
-  font-size: 19px; color: var(--text-secondary); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto;
-}
-.hero-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-.btn-primary {
-  padding: 16px 40px; border-radius: 50px; background: var(--gradient-gold); color: #0a0e1a;
-  font-size: 16px; font-weight: 700; transition: all 0.3s;
-  box-shadow: 0 4px 20px rgba(212,175,55,0.4);
-}
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(212,175,55,0.6); }
-.btn-outline {
-  padding: 16px 40px; border-radius: 50px; background: transparent; color: var(--text-primary);
-  font-size: 16px; font-weight: 600; border: 1px solid var(--border);
-  transition: all 0.3s;
-}
-.btn-outline:hover { border-color: var(--gold); background: rgba(212,175,55,0.08); }
-
-/* Hero 装饰图形 */
-.hero-deco {
-  position: absolute; pointer-events: none; z-index: 1;
-}
-.hero-deco.d1 { top: 15%; left: 8%; width: 120px; height: 120px; border: 1px solid rgba(212,175,55,0.08); border-radius: 50%; animation: float-slow 6s ease-in-out infinite; }
-.hero-deco.d2 { top: 20%; left: 12%; width: 60px; height: 60px; border: 1px solid rgba(59,130,246,0.06); border-radius: 50%; animation: float-slow 8s ease-in-out infinite reverse; }
-.hero-deco.d3 { bottom: 15%; right: 10%; width: 160px; height: 160px; border: 1px solid rgba(212,175,55,0.05); border-radius: 50%; animation: float-slow 7s ease-in-out infinite; }
-.hero-deco.d4 { bottom: 20%; right: 14%; width: 80px; height: 80px; border: 1px solid rgba(59,130,246,0.05); border-radius: 50%; animation: float-slow 9s ease-in-out infinite reverse; }
-.hero-deco.d5 { top: 50%; left: 3%; width: 2px; height: 100px; background: linear-gradient(180deg, transparent, var(--gold), transparent); opacity: 0.15; }
-.hero-deco.d6 { top: 40%; right: 3%; width: 2px; height: 120px; background: linear-gradient(180deg, transparent, var(--gold), transparent); opacity: 0.15; }
-
-.hero-stats {
-  display: flex; gap: 50px; justify-content: center; margin-top: 70px; flex-wrap: wrap;
-}
-.hero-stat {
-  text-align: center; position: relative;
-  padding: 0 10px;
-}
-.hero-stat:not(:last-child)::after {
-  content: ''; position: absolute; right: -25px; top: 15%; height: 70%; width: 1px;
-  background: linear-gradient(180deg, transparent, var(--border-gold), transparent);
-}
-.hero-stat .num {
-  font-size: 42px; font-weight: 800;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero-stat .label { font-size: 14px; color: var(--text-secondary); margin-top: 6px; }
-.hero-scroll {
-  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-  font-size: 12px; color: var(--text-tertiary); letter-spacing: 2px; text-align: center;
-}
-.hero-scroll .arrow {
-  width: 20px; height: 32px; border: 2px solid var(--text-tertiary); border-radius: 12px;
-  margin: 8px auto 0; position: relative;
-}
-.hero-scroll .arrow::before {
-  content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
-  width: 4px; height: 4px; border-radius: 50%; background: var(--gold);
-  animation: scroll-dot 2s infinite;
-}
-@keyframes scroll-dot {
-  0% { top: 6px; opacity: 1; }
-  100% { top: 18px; opacity: 0; }
+@media(max-width:560px){
+ .service-grid,.levels,.process{grid-template-columns:1fr} .hero-card{display:none}
+ h1{font-size:43px} .section-head h2,.cta h2{font-size:32px}
+ .footer{flex-direction:column;align-items:flex-start}
 }
 
-/* ===== 通用 Section ===== */
-.section-pad { padding: 100px 5%; position: relative; }
-.section-head { text-align: center; margin-bottom: 60px; }
-.section-tag {
-  display: inline-block; padding: 6px 18px; border-radius: 50px;
-  background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2);
-  font-size: 13px; color: var(--gold-light); margin-bottom: 16px;
-}
-.section-head h2 {
-  font-size: 40px; font-weight: 800; margin-bottom: 16px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #94a3b8 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.section-head p { font-size: 17px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
-
-/* Section 装饰线 */
-.section-line {
-  width: 1px; height: 60px; margin: 0 auto 40px;
-  background: linear-gradient(180deg, transparent, var(--gold), transparent);
-}
-
-/* ===== 关于领升 ===== */
-.about { background: var(--bg-secondary); }
-.about::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
-}
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-  max-width: 1200px; margin: 0 auto;
-}
-.about-visual {
-  position: relative; border-radius: 20px; overflow: hidden;
-  aspect-ratio: 4/3;
-  background: linear-gradient(135deg, #1a2238 0%, #0a0e1a 100%);
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-}
-.about-visual::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(212,175,55,0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.04) 0%, transparent 40%);
-}
-.about-visual .ring {
-  position: absolute; border-radius: 50%; border: 1px solid rgba(212,175,55,0.12);
-}
-.about-visual .ring:nth-child(1) { width: 85%; height: 85%; animation: spin 30s linear infinite; }
-.about-visual .ring:nth-child(2) { width: 65%; height: 65%; animation: spin 20s linear infinite reverse; border-color: rgba(59,130,246,0.1); }
-.about-visual .ring:nth-child(3) { width: 45%; height: 45%; animation: spin 15s linear infinite; }
-/* 六边形装饰 */
-.about-visual .hex {
-  position: absolute; width: 8px; height: 8px; background: var(--gold); opacity: 0.2;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-.about-visual .hex:nth-of-type(1) { top: 15%; left: 15%; animation: float-slow 5s ease-in-out infinite; }
-.about-visual .hex:nth-of-type(2) { top: 25%; right: 20%; animation: float-slow 7s ease-in-out infinite; }
-.about-visual .hex:nth-of-type(3) { bottom: 20%; left: 25%; animation: float-slow 6s ease-in-out infinite; }
-.about-visual .hex:nth-of-type(4) { bottom: 15%; right: 15%; animation: float-slow 8s ease-in-out infinite; }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.about-visual .core {
-  position: relative; z-index: 2; text-align: center;
-}
-.about-visual .core .icon {
-  font-size: 48px; margin-bottom: 12px; color: var(--gold);
-  text-shadow: 0 0 30px rgba(212,175,55,0.3);
-}
-.about-visual .core .text { font-size: 20px; font-weight: 800; color: var(--gold-light); letter-spacing: 2px; }
-.about-visual .core .sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; letter-spacing: 1px; }
-.about-text h3 { font-size: 30px; font-weight: 700; margin-bottom: 20px; line-height: 1.4; }
-.about-text h3 span { color: var(--gold); }
-.about-text .core-belief {
-  font-size: 17px; color: var(--gold-light); font-style: italic; margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--gold);
-  position: relative;
-}
-.about-text .core-belief::before {
-  content: '"'; position: absolute; left: -8px; top: -10px; font-size: 40px; color: var(--gold); opacity: 0.3;
-}
-.about-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
-.about-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px;
-}
-.about-stat {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px;
-  text-align: center; transition: all 0.3s; position: relative; overflow: hidden;
-}
-.about-stat::before {
-  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 30px; height: 2px;
-  background: var(--gold); opacity: 0.3;
-}
-.about-stat:hover { border-color: var(--border-gold); transform: translateY(-3px); }
-.about-stat .num {
-  font-size: 28px; font-weight: 800; margin-bottom: 4px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.about-stat .label { font-size: 13px; color: var(--text-secondary); }
-
-/* ===== 品牌理念 ===== */
-.philosophy { background: var(--bg-primary); }
-.phil-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
-  max-width: 1100px; margin: 0 auto;
-}
-.phil-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-  padding: 36px; transition: all 0.4s; position: relative; overflow: hidden;
-}
-.phil-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gradient-gold); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s;
-}
-.phil-card::after {
-  content: ''; position: absolute; bottom: -50px; right: -50px; width: 120px; height: 120px;
-  border: 1px solid rgba(212,175,55,0.04); border-radius: 50%;
-  transition: all 0.4s;
-}
-.phil-card:hover { transform: translateY(-6px); border-color: var(--border-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.phil-card:hover::before { transform: scaleX(1); }
-.phil-card:hover::after { width: 160px; height: 160px; border-color: rgba(212,175,55,0.08); }
-.phil-card .phil-num {
-  position: absolute; top: 28px; right: 28px; font-size: 48px; font-weight: 900;
-  color: rgba(212,175,55,0.06); line-height: 1;
-}
-.phil-card .phil-icon {
-  width: 52px; height: 52px; border-radius: 14px; margin-bottom: 20px;
-  background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center;
-  font-size: 24px; color: var(--gold);
-}
-.phil-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
-.phil-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
-
-/* ===== 核心服务 ===== */
-.services { background: var(--bg-secondary); }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-  max-width: 1200px; margin: 0 auto;
-}
-.service-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-  padding: 36px 28px; transition: all 0.4s; position: relative; overflow: hidden;
-}
-.service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gradient-gold); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s;
-}
-.service-card::after {
-  content: ''; position: absolute; bottom: -60px; right: -60px; width: 100px; height: 100px;
-  border: 1px solid rgba(212,175,55,0.04); border-radius: 50%;
-  transition: all 0.4s;
-}
-.service-card:hover { transform: translateY(-8px); border-color: var(--border-gold); background: var(--bg-card-hover); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.service-card:hover::before { transform: scaleX(1); }
-.service-card:hover::after { width: 140px; height: 140px; border-color: rgba(212,175,55,0.1); }
-.service-icon {
-  width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
-  background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center;
-  font-size: 26px; color: var(--gold);
-  position: relative;
-}
-.service-icon::after {
-  content: ''; position: absolute; inset: -2px; border-radius: 16px;
-  border: 1px solid rgba(212,175,55,0.15);
-}
-.service-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
-.service-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-.service-card ul { list-style: none; margin-top: 16px; }
-.service-card ul li { font-size: 13px; color: var(--text-secondary); padding: 5px 0; padding-left: 20px; position: relative; }
-.service-card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
-
-/* ===== 核心优势 ===== */
-.why { background: var(--bg-primary); }
-.why-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-  max-width: 1200px; margin: 0 auto;
-}
-.why-card {
-  text-align: center; padding: 36px 20px;
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-  transition: all 0.4s; position: relative; overflow: hidden;
-}
-.why-card::before {
-  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 60px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
-  opacity: 0; transition: opacity 0.4s;
-}
-.why-card:hover { transform: translateY(-6px); border-color: var(--border-gold); }
-.why-card:hover::before { opacity: 1; }
-.why-card .num {
-  font-size: 36px; font-weight: 800; margin-bottom: 12px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  position: relative; z-index: 2;
-}
-.why-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-.why-card p { font-size: 14px; color: var(--text-secondary); }
-
-/* ===== 对比板块 ===== */
-.compare { background: var(--bg-secondary); }
-.compare-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  max-width: 1000px; margin: 0 auto; border-radius: 16px; overflow: hidden;
-  border: 1px solid var(--border);
-}
-.compare-col { padding: 40px; position: relative; }
-.compare-col.before {
-  background: var(--bg-card);
-  border-right: 1px solid var(--border);
-}
-.compare-col.after {
-  background: linear-gradient(135deg, rgba(212,175,55,0.04) 0%, var(--bg-card) 100%);
-}
-.compare-col h4 {
-  font-size: 22px; font-weight: 700; margin-bottom: 24px; padding-bottom: 16px;
-  border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
-}
-.compare-col.before h4 { color: var(--text-secondary); }
-.compare-col.before h4 .tag {
-  font-size: 12px; padding: 3px 12px; border-radius: 20px;
-  background: rgba(255,255,255,0.05); color: var(--text-tertiary);
-}
-.compare-col.after h4 { color: var(--gold-light); }
-.compare-col.after h4 .tag {
-  font-size: 12px; padding: 3px 12px; border-radius: 20px;
-  background: rgba(212,175,55,0.15); color: var(--gold);
-}
-.compare-col ul { list-style: none; }
-.compare-col ul li {
-  font-size: 14px; color: var(--text-secondary); padding: 10px 0; padding-left: 28px;
-  position: relative; border-bottom: 1px solid rgba(255,255,255,0.03);
-}
-.compare-col.before ul li::before {
-  content: '✕'; position: absolute; left: 0; color: #ef4444; font-weight: 700;
-}
-.compare-col.after ul li { color: var(--text-primary); }
-.compare-col.after ul li::before {
-  content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700;
-}
-
-/* ===== 服务流程 ===== */
-.process { background: var(--bg-primary); }
-.process-timeline {
-  max-width: 1000px; margin: 0 auto; position: relative;
-}
-.process-timeline::before {
-  content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(180deg, transparent, var(--gold), transparent);
-  transform: translateX(-50%);
-}
-.process-step {
-  display: flex; align-items: center; margin-bottom: 50px; position: relative;
-}
-.process-step:nth-child(odd) { justify-content: flex-end; }
-.process-step:nth-child(odd) .process-content { text-align: right; margin-right: 50px; }
-.process-step:nth-child(even) .process-content { text-align: left; margin-left: 50px; }
-.process-content {
-  width: 45%; padding: 28px; background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 16px; transition: all 0.3s; position: relative;
-}
-.process-content::before {
-  content: ''; position: absolute; top: 20px; width: 30px; height: 1px;
-  background: var(--border-gold);
-}
-.process-step:nth-child(odd) .process-content::before { right: -30px; }
-.process-step:nth-child(even) .process-content::before { left: -30px; }
-.process-content:hover { border-color: var(--border-gold); transform: scale(1.02); }
-.process-step .step-dot {
-  position: absolute; left: 50%; transform: translateX(-50%);
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--gradient-gold); border: 4px solid var(--bg-primary);
-  z-index: 2; box-shadow: 0 0 15px rgba(212,175,55,0.5);
-  position: absolute;
-}
-.process-step .step-dot::after {
-  content: ''; position: absolute; inset: -6px; border-radius: 50%;
-  border: 1px solid rgba(212,175,55,0.2);
-}
-.process-content .step-num { font-size: 13px; color: var(--gold-light); font-weight: 700; margin-bottom: 8px; }
-.process-content h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-.process-content p { font-size: 14px; color: var(--text-secondary); }
-
-/* ===== 课程体系 ===== */
-.courses { background: var(--bg-secondary); }
-.courses-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  max-width: 1200px; margin: 0 auto;
-}
-.course-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-  overflow: hidden; transition: all 0.4s;
-}
-.course-card:hover { transform: translateY(-6px); border-color: var(--border-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.course-banner {
-  height: 100px; position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.course-banner.c1 { background: linear-gradient(135deg, #1a2238 0%, #0d1019 100%); }
-.course-banner.c2 { background: linear-gradient(135deg, #1a2238 0%, #1a2a1f 100%); }
-.course-banner.c3 { background: linear-gradient(135deg, #1a2238 0%, #2a1f1a 100%); }
-.course-banner::before {
-  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 50%);
-}
-.course-banner .pattern {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(212,175,55,0.02) 20px, rgba(212,175,55,0.02) 21px);
-}
-.course-banner .level {
-  position: relative; z-index: 2; font-size: 14px; font-weight: 700; color: var(--gold);
-  padding: 6px 16px; border: 1px solid rgba(212,175,55,0.3); border-radius: 50px;
-  background: rgba(10,14,26,0.5); backdrop-filter: blur(10px);
-}
-.course-body { padding: 28px; }
-.course-body h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
-.course-body .target { font-size: 13px; color: var(--gold-light); margin-bottom: 16px; }
-.course-body ul { list-style: none; }
-.course-body ul li { font-size: 13px; color: var(--text-secondary); padding: 5px 0; padding-left: 20px; position: relative; }
-.course-body ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
-.course-footer {
-  padding: 16px 28px; border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.course-footer .duration { font-size: 13px; color: var(--text-secondary); }
-.course-footer .tag {
-  font-size: 12px; padding: 3px 12px; border-radius: 20px;
-  background: rgba(212,175,55,0.1); color: var(--gold-light);
-}
-
-/* ===== 数据成果 ===== */
-.results { background: var(--bg-primary); }
-.results-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-  max-width: 1200px; margin: 0 auto;
-}
-.result-card {
-  text-align: center; padding: 40px 20px; border-radius: 16px;
-  background: var(--bg-card); border: 1px solid var(--border);
-  transition: all 0.3s; position: relative; overflow: hidden;
-}
-.result-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.4s;
-}
-.result-card::after {
-  content: ''; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
-  width: 80px; height: 80px; border: 1px solid rgba(212,175,55,0.04); border-radius: 50%;
-}
-.result-card:hover { border-color: var(--border-gold); transform: translateY(-4px); }
-.result-card:hover::before { transform: scaleX(1); }
-.result-card .icon { font-size: 32px; margin-bottom: 16px; color: var(--gold); position: relative; z-index: 2; }
-.result-card .num {
-  font-size: 42px; font-weight: 800; margin-bottom: 8px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  position: relative; z-index: 2;
-}
-.result-card .label { font-size: 14px; color: var(--text-secondary); position: relative; z-index: 2; }
-
-/* ===== 客户行业 ===== */
-.industries { background: var(--bg-secondary); }
-.ind-grid {
-  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-  max-width: 900px; margin: 0 auto;
-}
-.ind-tag {
-  padding: 12px 24px; border-radius: 50px;
-  background: var(--bg-card); border: 1px solid var(--border);
-  font-size: 14px; color: var(--text-secondary);
-  transition: all 0.3s;
-}
-.ind-tag:hover {
-  border-color: var(--border-gold); color: var(--gold-light); transform: translateY(-2px);
-  background: rgba(212,175,55,0.05);
-}
-
-/* ===== CTA 横幅 ===== */
-.cta-banner {
-  background: var(--bg-primary); padding: 80px 5%;
-  position: relative; overflow: hidden;
-}
-.cta-banner::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(212,175,55,0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 50%, rgba(59,130,246,0.04) 0%, transparent 40%);
-}
-.cta-content {
-  max-width: 700px; margin: 0 auto; text-align: center;
-  position: relative; z-index: 2;
-}
-.cta-content h3 {
-  font-size: 34px; font-weight: 800; margin-bottom: 16px;
-  background: linear-gradient(135deg, #f0f4ff 0%, var(--gold-light) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.cta-content p { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
-.cta-deco {
-  position: absolute; pointer-events: none;
-}
-.cta-deco.l { top: 20%; left: 10%; width: 100px; height: 100px; border: 1px solid rgba(212,175,55,0.05); border-radius: 50%; }
-.cta-deco.r { bottom: 20%; right: 10%; width: 140px; height: 140px; border: 1px solid rgba(59,130,246,0.04); border-radius: 50%; }
-
-/* ===== 联系我们 ===== */
-.contact { background: var(--bg-secondary); }
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
-  max-width: 1100px; margin: 0 auto; align-items: center;
-}
-.contact-info h3 { font-size: 30px; font-weight: 700; margin-bottom: 20px; }
-.contact-info p { color: var(--text-secondary); margin-bottom: 30px; font-size: 16px; }
-.contact-items { display: flex; flex-direction: column; gap: 20px; }
-.contact-item { display: flex; align-items: center; gap: 16px; }
-.contact-item .ci-icon {
-  width: 50px; height: 50px; border-radius: 12px; flex-shrink: 0;
-  background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center;
-  font-size: 22px; color: var(--gold);
-  position: relative;
-}
-.contact-item .ci-icon::after {
-  content: ''; position: absolute; inset: -2px; border-radius: 14px;
-  border: 1px solid rgba(212,175,55,0.1);
-}
-.contact-item .ci-text .label { font-size: 13px; color: var(--text-secondary); }
-.contact-item .ci-text .value { font-size: 16px; font-weight: 600; }
-.contact-form {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 20px; padding: 40px;
-  position: relative; overflow: hidden;
-}
-.contact-form::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gradient-gold);
-}
-.contact-form h3 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
-.form-group input, .form-group textarea, .form-group select {
-  width: 100%; padding: 12px 16px; border-radius: 10px;
-  background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary);
-  font-size: 15px; font-family: inherit; transition: border-color 0.3s;
-}
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-  outline: none; border-color: var(--gold);
-}
-.form-group textarea { resize: vertical; min-height: 100px; }
-.contact-form button {
-  width: 100%; padding: 14px; border-radius: 10px; border: none;
-  background: var(--gradient-gold); color: #0a0e1a; font-size: 16px; font-weight: 700;
-  cursor: pointer; transition: all 0.3s;
-}
-.contact-form button:hover { box-shadow: 0 6px 20px rgba(212,175,55,0.5); }
-.form-success {
-  display: none; text-align: center; padding: 30px;
-}
-.form-success.show { display: block; }
-.form-success .check {
-  width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 16px;
-  background: rgba(212,175,55,0.15); display: flex; align-items: center; justify-content: center;
-  font-size: 30px; color: var(--gold);
-}
-
-/* ===== 页脚 ===== */
-.footer {
-  background: var(--bg-primary); padding: 60px 5% 30px;
-  border-top: 1px solid var(--border);
-  position: relative;
-}
-.footer::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
-}
-.footer-grid {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
-  max-width: 1200px; margin: 0 auto;
-}
-.footer-brand .nav-logo { margin-bottom: 16px; }
-.footer-brand p { color: var(--text-secondary); font-size: 14px; max-width: 350px; }
-.footer-col h5 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
-.footer-col a { display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; transition: color 0.3s; }
-.footer-col a:hover { color: var(--gold-light); }
-.footer-bottom {
-  max-width: 1200px; margin: 40px auto 0; padding-top: 24px;
-  border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
-}
-.footer-bottom p { font-size: 13px; color: var(--text-secondary); }
-.footer-bottom .icp { font-size: 12px; color: var(--text-secondary); }
-
-/* ===== 回到顶部 ===== */
-.back-top {
-  position: fixed; bottom: 30px; right: 30px; z-index: 999;
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--bg-card); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; color: var(--gold); cursor: pointer;
-  opacity: 0; pointer-events: none; transition: all 0.3s;
-}
-.back-top.show { opacity: 1; pointer-events: auto; }
-.back-top:hover { border-color: var(--border-gold); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-
-/* ===== 动画入场 ===== */
-.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-
-/* ===== 响应式 ===== */
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-mobile { display: block; }
-  .hero h1 { font-size: 36px; }
-  .hero .hero-en { font-size: 16px; }
-  .hero .hero-en::before, .hero .hero-en::after { width: 25px; }
-  .hero .subtitle { font-size: 16px; }
-  .hero-stats { gap: 20px; }
-  .hero-stat .num { font-size: 30px; }
-  .hero-stat:not(:last-child)::after { display: none; }
-  .hero-deco { display: none; }
-  .about-grid, .contact-grid, .compare-grid { grid-template-columns: 1fr; gap: 40px; }
-  .services-grid, .why-grid, .results-grid, .phil-grid, .courses-grid { grid-template-columns: 1fr 1fr; }
-  .about-stats { grid-template-columns: 1fr 1fr; }
-  .process-timeline::before { left: 20px; }
-  .process-step { justify-content: flex-end !important; }
-  .process-step:nth-child(odd) .process-content { text-align: left; margin-right: 0; margin-left: 50px; }
-  .process-step .step-dot { left: 20px; }
-  .process-content { width: 85%; }
-  .process-content::before { display: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .section-head h2 { font-size: 28px; }
-  .cta-content h3 { font-size: 26px; }
-}
-@media (max-width: 600px) {
-  .services-grid, .why-grid, .results-grid, .phil-grid, .courses-grid, .about-stats { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 28px; }
-  .hero-actions { flex-direction: column; }
-  .section-pad { padding: 60px 5%; }
-  .compare-col { padding: 24px; }
-}
+.diagnosis{background:#fff}.diagnosis-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.diagnosis h2,.about-company h2{font-size:42px;line-height:1.25;margin-bottom:20px}.diagnosis p,.about-company p{color:#68737e;max-width:680px}
+.diag-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.diag-points div{border:1px solid #e2e7eb;padding:17px 18px;display:flex;align-items:center;gap:15px}.diag-points b{color:#b17e28;font-size:13px}.diag-points span{font-size:14px}
+.diag-card{background:linear-gradient(145deg,#0a1c2d,#061321);padding:42px;color:#fff;border:1px solid #193248;box-shadow:0 25px 60px rgba(6,19,33,.18)}.diag-card-top{color:var(--gold2);font-size:11px;letter-spacing:3px;margin-bottom:18px}.diag-card h3{font-size:30px;line-height:1.3;margin-bottom:16px}.diag-card p{color:#aeb9c5;margin-bottom:25px}
+.cases{background:#f5f7f9}.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.case{background:#fff;padding:31px;border:1px solid #e2e7eb;min-height:255px}.case>span{font-size:10px;letter-spacing:2px;color:#b17e28}.case h3{font-size:20px;line-height:1.4;margin:20px 0 13px}.case p{font-size:14px;color:#6d7781}.case-tag{display:inline-block;margin-top:22px;padding:5px 10px;border:1px solid #e0c58e;color:#9b6e22;font-size:11px}
+.lmhi{padding-bottom:100px}.lmhi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.lmhi-box{border:1px solid rgba(255,255,255,.12);padding:27px 15px;text-align:center;background:rgba(255,255,255,.03)}.lmhi-box b{display:block;color:var(--gold2);font-size:21px;margin-bottom:7px}.lmhi-box span{font-size:12px;color:#aeb9c5}
+.about-company{background:#fff}.about-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:80px;align-items:center}.about-logo{display:flex;justify-content:center}.about-logo img{width:min(330px,75%);border-radius:10px;box-shadow:0 25px 55px rgba(6,19,33,.15)}.about-company p{margin-bottom:12px}.signature{margin-top:25px;color:#b17e28;letter-spacing:3px;font-size:13px;font-weight:700}
+@media(max-width:850px){.diagnosis-grid,.about-grid{grid-template-columns:1fr}.case-grid{grid-template-columns:1fr 1fr}.lmhi-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.case-grid,.lmhi-grid{grid-template-columns:1fr}.diag-points{grid-template-columns:1fr}.diagnosis h2,.about-company h2{font-size:32px}}
 </style>
 </head>
 <body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="logo.jpg" alt="LEADRISE 领升 Logo">
+      <div class="brand-text"><strong>LEADRISE</strong><span>领 越 未 来 · 升 级 组 织</span></div>
+    </a>
+    <nav>
+      <a href="#about">关于领升</a><a href="#services">核心服务</a><a href="#courses">课程体系</a><a href="#diagnosis">企业诊断</a><a href="#cases">场景</a>
+      <a href="#method">服务流程</a><a href="#contact" class="nav-cta">预约诊断</a>
+    </nav>
+  </div>
+</header>
 
-<div class="bg-grid"></div>
-
-<!-- ===== 导航栏 ===== -->
-<nav class="navbar" id="navbar">
-  <div class="nav-logo">
-    <div class="logo-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M15 15 L15 85 L42 85 L42 72 L28 72 L28 28 L42 28 L42 15 Z" fill="#d4af37"/><path d="M52 15 L52 85 L62 85 L62 53 L72 65 L72 80 L82 80 L82 62 L70 50 L82 38 L82 20 L72 20 L72 35 L62 47 L62 15 Z" fill="#f0f4ff"/><path d="M82 70 L70 55 L70 68 L65 62 L65 72 L60 66 L60 76 L55 70 L55 82 L82 82 Z" fill="#d4af37"/></svg></div>
-    <div class="logo-text">
-      <div class="name">领升<span> LEADRISE</span></div>
-      <div class="slogan">培养领导者，打造高绩效销售团队</div>
-    </div>
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">SALES LEADERSHIP DEVELOPMENT</div>
+   <h1>培养领导者<br><em>打造高绩效销售团队</em></h1>
+   <p>LEADRISE 领升专注销售领导力发展，帮助企业从“个人能打”走向“团队能打”，建立可复制、可持续的销售增长能力。</p>
+   <div class="buttons"><a class="btn btn-gold" href="#contact">预约企业诊断</a><a class="btn btn-outline" href="#services">了解核心服务</a></div>
   </div>
-  <div class="nav-links">
-    <a href="#about">关于领升</a>
-    <a href="#philosophy">品牌理念</a>
-    <a href="#services">核心服务</a>
-    <a href="#courses">课程体系</a>
-    <a href="#compare">能力跨越</a>
-    <a href="#process">服务流程</a>
-    <a href="#contact">联系我们</a>
+  <div class="hero-card">
+   <div class="mini">LEAD BETTER. RISE HIGHER.</div>
+   <h2>从培养一个销售领导者，到打造一支高绩效销售团队。</h2>
+   <p>领导力可培养 · 团队决定结果 · 过程驱动结果 · 成长永无止境</p>
   </div>
-  <a href="#contact" class="nav-cta">预约领导力诊断</a>
-  <div class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('show-mobile')">☰</div>
-</nav>
-
-<!-- ===== Hero ===== -->
-<section class="hero" id="home">
-  <div class="hero-deco d1"></div>
-  <div class="hero-deco d2"></div>
-  <div class="hero-deco d3"></div>
-  <div class="hero-deco d4"></div>
-  <div class="hero-deco d5"></div>
-  <div class="hero-deco d6"></div>
-  <div class="hero-content">
-    <div class="hero-badge">领升 LEADRISE · 销售领导力发展专家</div>
-    <h1>培养领导者<span class="highlight"> 打造高绩效</span><br>销售团队</h1>
-    <div class="hero-en">LEAD BETTER. <span>RISE HIGHER.</span></div>
-    <p class="subtitle">专注销售组织与领导力发展，帮助企业培养能带人、带队、拿结果的销售领导者，助力团队持续创造业绩</p>
-    <div class="hero-actions">
-      <a href="#services" class="btn-primary">了解我们的课程</a>
-      <a href="#contact" class="btn-outline">预约领导力诊断</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="num">10+</div>
-        <div class="label">专注销售领导力</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">200+</div>
-        <div class="label">服务企业</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">5000+</div>
-        <div class="label">学员数量</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">30+</div>
-        <div class="label">覆盖行业</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    SCROLL
-    <div class="arrow"></div>
-  </div>
+ </div>
 </section>
 
-<!-- ===== 关于领升 ===== -->
-<section class="about section-pad" id="about">
-  <div class="section-line"></div>
-  <div class="about-grid">
-    <div class="about-visual fade-up">
-      <div class="ring"></div>
-      <div class="ring"></div>
-      <div class="ring"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="core">
-        <div class="icon">◈</div>
-        <div class="text">领升 LEADRISE</div>
-        <div class="sub">SALES LEADERSHIP DEVELOPMENT</div>
-      </div>
-    </div>
-    <div class="about-text fade-up">
-      <div class="section-tag" style="margin-bottom:16px">关于领升</div>
-      <h3>企业的增长，取决于<span>领导者的成长</span></h3>
-      <div class="core-belief">每一位优秀的销售领导者，都是刻意训练的结果。</div>
-      <p>领升LEADRISE是一家专注销售领导力发展的咨询与培训机构。我们帮助企业培养能带人、带队、拿结果的销售领导者，助力团队持续创造业绩。</p>
-      <p>通过系统训练与陪跑，我们帮助销售经理完成从"个人贡献者"到"团队领导者"的身份跨越——这不是天赋的觉醒，而是能力的跃升。</p>
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="num">10+</div>
-          <div class="label">年专注销售领导力</div>
-        </div>
-        <div class="about-stat">
-          <div class="num">200+</div>
-          <div class="label">家服务企业</div>
-        </div>
-        <div class="about-stat">
-          <div class="num">5000+</div>
-          <div class="label">名培训学员</div>
-        </div>
-        <div class="about-stat">
-          <div class="num">30+</div>
-          <div class="label">个覆盖行业</div>
-        </div>
-      </div>
-    </div>
+<div class="stats"><div class="container stats-grid">
+ <div class="stat"><b>10+</b><span>年销售领导力专注</span></div>
+ <div class="stat"><b>200+</b><span>客户企业</span></div>
+ <div class="stat"><b>5000+</b><span>培训学员</span></div>
+ <div class="stat"><b>30+</b><span>覆盖行业</span></div>
+</div></div>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">WHY LEADRISE</div><h2>不是上一堂课，<br>而是让组织真正发生改变</h2><p>围绕销售领导者、销售团队和销售管理体系，建立从诊断到训练、从训练到陪跑的完整成长路径。</p></div>
+  <div class="before-after">
+   <div class="ba"><h3>个人贡献者</h3><ul>
+    <li>依赖个人能力拿结果</li><li>亲自盯业务、亲自解决问题</li><li>关注个人客户与个人目标</li><li>时间被业务事务填满</li><li>更多依靠经验与直觉决策</li>
+   </ul></div>
+   <div class="ba after"><h3>团队领导者</h3><ul>
+    <li>通过团队获得持续结果</li><li>懂得授权、赋能与辅导</li><li>关注团队与组织目标</li><li>把时间投入管理、复盘与规划</li><li>通过流程与数据提升决策质量</li>
+   </ul></div>
   </div>
+ </div>
 </section>
 
-<!-- ===== 品牌理念 ===== -->
-<section class="philosophy section-pad" id="philosophy">
-  <div class="section-head fade-up">
-    <div class="section-tag">品牌理念</div>
-    <h2>领升相信的四个事实</h2>
-    <p>这些信念驱动我们每一次训练与陪跑</p>
+<section id="services" class="services">
+ <div class="container">
+  <div class="section-head"><div class="kicker">CORE SERVICES</div><h2>六大核心服务</h2><p>以销售组织为核心，把领导力训练、团队建设、销售体系与业务落地连接起来。</p></div>
+  <div class="service-grid">
+   <div class="service"><span class="num">01</span><h3>销售领导力训练</h3><p>帮助销售主管、经理、总监完成从“业务高手”到“团队领导者”的能力跃迁。</p></div>
+   <div class="service"><span class="num">02</span><h3>高绩效团队打造</h3><p>围绕目标、角色、机制、辅导与执行，建立团队持续拿结果的能力。</p></div>
+   <div class="service"><span class="num">03</span><h3>销售管理体系</h3><p>梳理销售流程、目标管理、过程管理、复盘机制和团队管理工具。</p></div>
+   <div class="service"><span class="num">04</span><h3>销售赋能培训</h3><p>覆盖客户沟通、需求挖掘、异议处理、大客户销售与成交等关键能力。</p></div>
+   <div class="service"><span class="num">05</span><h3>销售组织诊断</h3><p>从组织、管理、人才与销售过程多个维度识别增长瓶颈。</p></div>
+   <div class="service"><span class="num">06</span><h3>陪跑与落地</h3><p>培训之后持续跟进，通过行动、复盘和管理机制推动能力真正转化。</p></div>
   </div>
-  <div class="phil-grid">
-    <div class="phil-card fade-up">
-      <div class="phil-num">01</div>
-      <div class="phil-icon">◈</div>
-      <h4>领导力可培养</h4>
-      <p>领导力并非天生，更不是少数人的专利。它是一套可拆解、可训练、可评估的系统能力。每一位被寄予厚望的销售经理，都可以通过刻意训练，成长为能带队拿结果的领导者。</p>
-    </div>
-    <div class="phil-card fade-up">
-      <div class="phil-num">02</div>
-      <div class="phil-icon">◇</div>
-      <h4>团队决定结果</h4>
-      <p>个人英雄无法赢得长期竞争。一个人的业绩上限决定不了团队的天花板，团队的整体能力才是企业可持续增长的核心竞争力。投资团队，就是投资未来的业绩。</p>
-    </div>
-    <div class="phil-card fade-up">
-      <div class="phil-num">03</div>
-      <div class="phil-icon">◆</div>
-      <h4>过程驱动结果</h4>
-      <p>没有科学的销售管理流程，就没有可持续的业绩输出。我们帮助企业建立从线索到回款的全流程管理体系，让过程可追踪、可复盘、可优化，让业绩更可预测。</p>
-    </div>
-    <div class="phil-card fade-up">
-      <div class="phil-num">04</div>
-      <div class="phil-icon">★</div>
-      <h4>成长永无止境</h4>
-      <p>市场在变、客户在变、团队在变。优秀的领导者需要持续学习、实践、自我超越。领升不只提供一次培训，我们陪跑成长，让学习成为组织持续进化的引擎。</p>
-    </div>
-  </div>
+ </div>
 </section>
 
-<!-- ===== 核心服务 ===== -->
-<section class="services section-pad" id="services">
-  <div class="section-head fade-up">
-    <div class="section-tag">核心服务</div>
-    <h2>六大服务板块</h2>
-    <p>从个体能力到组织体系，全方位赋能销售团队</p>
+<section id="courses" class="dark">
+ <div class="container">
+  <div class="section-head"><div class="kicker">LEADRISE ACADEMY</div><h2>三级课程体系</h2><p>从销售新人到销售骨干，再到销售管理者，形成递进式能力发展路径。</p></div>
+  <div class="levels">
+   <div class="level"><span class="tag">L1 · 基础级</span><h3>新兵营 · 销售基本功</h3><p>适合销售新人</p><ul><li>销售 mindset 与职业认知</li><li>客户拜访与沟通</li><li>需求发现与痛点识别</li><li>异议处理与成交</li><li>时间管理与客户分类</li></ul></div>
+   <div class="level"><span class="tag">L2 · 进阶级</span><h3>骨干班 · 大客户攻单</h3><p>适合1–3年销售经验</p><ul><li>大客户策略与决策链</li><li>复杂销售管理</li><li>多线程推进与竞争分析</li><li>高层对话与价值呈现</li><li>招投标策略</li></ul></div>
+   <div class="level"><span class="tag">L3 · 将帅营</span><h3>销售团队管理</h3><p>适合销售经理 / 总监</p><ul><li>目标与绩效管理</li><li>团队辅导与反馈</li><li>授权与人才培养</li><li>销售过程管理</li><li>复盘与组织能力建设</li></ul></div>
   </div>
-  <div class="services-grid">
-    <div class="service-card fade-up">
-      <div class="service-icon">◈</div>
-      <h4>销售领导力训练</h4>
-      <p>帮助销售经理完成从"个人贡献者"到"团队领导者"的身份跨越，系统培养带队能力。</p>
-      <ul>
-        <li>角色认知与身份转换</li>
-        <li>目标拆解与过程管理</li>
-        <li>辅导与反馈技巧</li>
-        <li>团队激励与赋能</li>
-      </ul>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">◇</div>
-      <h4>高绩效团队打造</h4>
-      <p>从选人到育人到留人，帮助企业构建能打硬仗的销售铁军。</p>
-      <ul>
-        <li>销售人才画像与甄选</li>
-        <li>团队架构与梯队建设</li>
-        <li>激励机制设计</li>
-        <li>团队文化打造</li>
-      </ul>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">◆</div>
-      <h4>销售管理体系搭建</h4>
-      <p>建立科学可复制的销售管理流程，让业绩从"靠个人"变成"靠体系"。</p>
-      <ul>
-        <li>销售流程标准化</li>
-        <li>CRM与数据管理</li>
-        <li>销售漏斗管理</li>
-        <li>周报/月报复盘机制</li>
-      </ul>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">★</div>
-      <h4>销售赋能培训</h4>
-      <p>面向不同层级销售人员的定制化实战培训，直接上战场就能用。</p>
-      <ul>
-        <li>新兵营：销售基本功</li>
-        <li>骨干班：大客户攻单</li>
-        <li>将帅营：团队管理</li>
-        <li>场景化实战演练</li>
-      </ul>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">●</div>
-      <h4>销售组织诊断</h4>
-      <p>全面体检销售组织健康度，找到制约增长的关键瓶颈。</p>
-      <ul>
-        <li>销售效能评估</li>
-        <li>组织架构诊断</li>
-        <li>流程瓶颈分析</li>
-        <li>人才密度盘点</li>
-      </ul>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">▲</div>
-      <h4>陪跑式落地服务</h4>
-      <p>不只给方案，更陪跑落地。确保训练成果真正转化为业绩。</p>
-      <ul>
-        <li>管理者日常陪跑</li>
-        <li>关键客户攻单辅导</li>
-        <li>复盘会议主持</li>
-        <li>阶段性效果评估</li>
-      </ul>
-    </div>
-  </div>
+ </div>
 </section>
 
-<!-- ===== 课程体系 ===== -->
-<section class="courses section-pad" id="courses">
-  <div class="section-head fade-up">
-    <div class="section-tag">课程体系</div>
-    <h2>三级进阶课程</h2>
-    <p>从新兵到将帅，每一级都有清晰的能力跃迁路径</p>
+<section id="method">
+ <div class="container">
+  <div class="section-head"><div class="kicker">DELIVERY METHOD</div><h2>五步落地路径</h2><p>让咨询、培训与企业实际业务连接起来。</p></div>
+  <div class="process">
+   <div class="step"><b>STEP 01</b><h3>企业诊断</h3><p>了解组织、团队、业务与管理现状。</p></div>
+   <div class="step"><b>STEP 02</b><h3>问题定位</h3><p>识别影响团队绩效的关键问题。</p></div>
+   <div class="step"><b>STEP 03</b><h3>方案设计</h3><p>形成针对企业实际场景的项目方案。</p></div>
+   <div class="step"><b>STEP 04</b><h3>训练实施</h3><p>通过课程、工具与行动训练完成能力输入。</p></div>
+   <div class="step"><b>STEP 05</b><h3>陪跑复盘</h3><p>持续跟踪行动、复盘结果并推动机制落地。</p></div>
   </div>
-  <div class="courses-grid">
-    <div class="course-card fade-up">
-      <div class="course-banner c1">
-        <div class="pattern"></div>
-        <div class="level">L1 基础级</div>
-      </div>
-      <div class="course-body">
-        <h4>新兵营 · 销售基本功</h4>
-        <div class="target">面向新入职销售人员</div>
-        <ul>
-          <li>销售心态与职业认知</li>
-          <li>客户拜访与沟通技巧</li>
-          <li>需求挖掘与痛点定位</li>
-          <li>异议处理与成交技巧</li>
-          <li>时间管理与客户分类</li>
-        </ul>
-      </div>
-      <div class="course-footer">
-        <div class="duration">3-5天集中训练</div>
-        <div class="tag">入门必修</div>
-      </div>
-    </div>
-    <div class="course-card fade-up">
-      <div class="course-banner c2">
-        <div class="pattern"></div>
-        <div class="level">L2 进阶级</div>
-      </div>
-      <div class="course-body">
-        <h4>骨干班 · 大客户攻单</h4>
-        <div class="target">面向有1-3年经验的销售骨干</div>
-        <ul>
-          <li>大客户策略与决策链</li>
-          <li>复杂销售流程管理</li>
-          <li>多线程推进与竞争分析</li>
-          <li>高层对话与价值呈现</li>
-          <li>招投标策略与控标</li>
-        </ul>
-      </div>
-      <div class="course-footer">
-        <div class="duration">5-7天集中+陪跑</div>
-        <div class="tag">进阶核心</div>
-      </div>
-    </div>
-    <div class="course-card fade-up">
-      <div class="course-banner c3">
-        <div class="pattern"></div>
-        <div class="level">L3 管理级</div>
-      </div>
-      <div class="course-body">
-        <h4>将帅营 · 团队管理</h4>
-        <div class="target">面向销售经理/总监</div>
-        <ul>
-          <li>角色转换与领导力认知</li>
-          <li>目标拆解与过程管控</li>
-          <li>团队搭建与人才培养</li>
-          <li>绩效辅导与激励驱动</li>
-          <li>复盘文化与持续进化</li>
-        </ul>
-      </div>
-      <div class="course-footer">
-        <div class="duration">7天分阶段+3月陪跑</div>
-        <div class="tag">高阶必修</div>
-      </div>
-    </div>
-  </div>
+ </div>
 </section>
 
-<!-- ===== 能力跨越对比 ===== -->
-<section class="compare section-pad" id="compare">
-  <div class="section-head fade-up">
-    <div class="section-tag">能力跨越</div>
-    <h2>从个人贡献者到团队领导者</h2>
-    <p>领升帮助销售经理完成最关键的身份跃迁</p>
+<section class="services">
+ <div class="container">
+  <div class="section-head"><div class="kicker">INDUSTRIES</div><h2>服务多元企业场景</h2><p>课程与咨询可以根据企业行业、规模和销售模式进行定制。</p></div>
+  <div class="industries">
+   <span class="industry">酒店与文旅</span><span class="industry">房地产</span><span class="industry">建筑</span>
+   <span class="industry">物流与供应链</span><span class="industry">新能源</span><span class="industry">快消</span>
+   <span class="industry">企业服务</span><span class="industry">汽车</span><span class="industry">农业科技</span>
+   <span class="industry">贸易零售</span><span class="industry">媒体广告</span><span class="industry">咨询服务</span>
   </div>
-  <div class="compare-grid fade-up">
-    <div class="compare-col before">
-      <h4>个人贡献者 <span class="tag">BEFORE</span></h4>
-      <ul>
-        <li>靠个人能力拿单，业绩上限明显</li>
-        <li>习惯亲力亲为，不善于带人</li>
-        <li>关注自己的客户和目标</li>
-        <li>沟通方式直接，缺乏辅导意识</li>
-        <li>时间被业务填满，无暇思考管理</li>
-        <li>认为带人"不如自己做更快"</li>
-        <li>凭直觉和经验做判断</li>
-      </ul>
-    </div>
-    <div class="compare-col after">
-      <h4>团队领导者 <span class="tag">AFTER</span></h4>
-      <ul>
-        <li>通过团队拿结果，业绩天花板打开</li>
-        <li>善于授权赋能，让团队成长</li>
-        <li>关注团队目标和组织利益</li>
-        <li>掌握辅导反馈技巧，培养下属</li>
-        <li>时间分配到管理、复盘、规划</li>
-        <li>相信体系的力量大于个人英雄</li>
-        <li>用流程和数据驱动决策</li>
-      </ul>
-    </div>
-  </div>
+ </div>
 </section>
 
-<!-- ===== 核心优势 ===== -->
-<section class="why section-pad" id="why">
-  <div class="section-head fade-up">
-    <div class="section-tag">核心优势</div>
-    <h2>为什么选择领升</h2>
-    <p>四大核心优势，确保每一次训练都能转化为真实业绩</p>
+
+<section id="diagnosis" class="diagnosis">
+ <div class="container diagnosis-grid">
+  <div>
+   <div class="kicker">LEADRISE BUSINESS DIAGNOSIS</div>
+   <h2>先诊断，再训练；<br>先找到问题，再解决问题。</h2>
+   <p>针对企业销售组织，从目标、团队、管理、流程与领导力等维度进行结构化诊断，帮助管理者看清当前瓶颈与下一步行动重点。</p>
+   <div class="diag-points">
+    <div><b>01</b><span>组织与团队现状</span></div>
+    <div><b>02</b><span>销售管理机制</span></div>
+    <div><b>03</b><span>领导者能力</span></div>
+    <div><b>04</b><span>销售过程与执行</span></div>
+   </div>
   </div>
-  <div class="why-grid">
-    <div class="why-card fade-up">
-      <div class="num">01</div>
-      <h4>专注垂直</h4>
-      <p>10年+只做销售领导力一件事，不贪多、不走偏，深度决定高度</p>
-    </div>
-    <div class="why-card fade-up">
-      <div class="num">02</div>
-      <h4>实战导向</h4>
-      <p>所有课程与方案来自真实战场，拒绝理论空谈，每一步都能直接落地</p>
-    </div>
-    <div class="why-card fade-up">
-      <div class="num">03</div>
-      <h4>陪跑落地</h4>
-      <p>不止于培训交付，提供从训练到落地到复盘的全周期陪跑服务</p>
-    </div>
-    <div class="why-card fade-up">
-      <div class="num">04</div>
-      <h4>成果可量化</h4>
-      <p>每一次训练都有明确的能力指标与业绩关联，让投入产出看得见</p>
-    </div>
+  <div class="diag-card">
+   <div class="diag-card-top">FREE FIRST DIAGNOSIS</div>
+   <h3>企业销售领导力<br>初步诊断</h3>
+   <p>适合企业老板、销售负责人、人力资源负责人预约。</p>
+   <a class="btn btn-gold" href="mailto:service@leadrise.com.cn?subject=预约LEADRISE企业诊断">立即预约</a>
   </div>
+ </div>
+</section>
+<section id="cases" class="cases">
+ <div class="container">
+  <div class="section-head"><div class="kicker">PROJECT SCENARIOS</div><h2>我们解决什么问题</h2><p>以下为官网规划中的典型业务场景，正式发布时可替换为经授权的真实客户案例与数据。</p></div>
+  <div class="case-grid">
+   <article class="case"><span>SCENARIO 01</span><h3>销售经理“自己能干，团队不会干”</h3><p>从个人贡献者向团队领导者转型，建立目标、授权、辅导与复盘机制。</p><div class="case-tag">销售领导力</div></article>
+   <article class="case"><span>SCENARIO 02</span><h3>销售团队业绩依赖少数明星</h3><p>梳理销售过程与管理机制，推动经验沉淀为团队可复制的方法。</p><div class="case-tag">高绩效团队</div></article>
+   <article class="case"><span>SCENARIO 03</span><h3>培训结束后，业务没有变化</h3><p>把课堂训练连接到行动、复盘和管理场景，推动培训成果向业务转化。</p><div class="case-tag">陪跑落地</div></article>
+  </div>
+ </div>
+</section>
+<section id="lmhi" class="dark lmhi">
+ <div class="container">
+  <div class="section-head"><div class="kicker">LMHI · LEADERSHIP & MANAGEMENT HEALTH INDEX</div><h2>企业管理健康度，<br>用结构化指标看见</h2><p>如果未来与企业家协会等机构合作，可将企业诊断进一步形成标准化指标体系。当前官网仅作为产品概念展示，具体指标、算法和基准值待正式定义。</p></div>
+  <div class="lmhi-grid">
+   <div class="lmhi-box"><b>组织</b><span>结构与协同</span></div>
+   <div class="lmhi-box"><b>领导</b><span>管理者能力</span></div>
+   <div class="lmhi-box"><b>销售</b><span>过程与执行</span></div>
+   <div class="lmhi-box"><b>人才</b><span>培养与梯队</span></div>
+   <div class="lmhi-box"><b>机制</b><span>目标与复盘</span></div>
+  </div>
+ </div>
+</section>
+<section id="about-company" class="about-company">
+ <div class="container about-grid">
+  <div class="about-logo"><img src="logo.jpg" alt="LEADRISE 领升"></div>
+  <div>
+   <div class="kicker">ABOUT LEADRISE</div>
+   <h2>一家专注销售领导力发展的企业咨询培训机构</h2>
+   <p>LEADRISE 领升围绕销售领导者、销售团队与销售管理体系，为企业提供诊断、培训、咨询与陪跑服务。</p>
+   <p>核心方向不是单一课程交付，而是帮助企业把领导力、团队能力与销售结果连接起来。</p>
+   <div class="signature">LEAD BETTER. RISE HIGHER.</div>
+  </div>
+ </div>
 </section>
 
-<!-- ===== 服务流程 ===== -->
-<section class="process section-pad" id="process">
-  <div class="section-head fade-up">
-    <div class="section-tag">服务流程</div>
-    <h2>五步法落地路径</h2>
-    <p>从诊断到陪跑，确保训练成果转化为业绩</p>
-  </div>
-  <div class="process-timeline">
-    <div class="process-step fade-up">
-      <div class="process-content">
-        <div class="step-num">STEP 01</div>
-        <h4>领导力诊断</h4>
-        <p>通过测评、访谈、数据分析，全面评估销售管理团队现状与关键短板，找到制约增长的核心瓶颈</p>
-      </div>
-      <div class="step-dot"></div>
-    </div>
-    <div class="process-step fade-up">
-      <div class="process-content">
-        <div class="step-num">STEP 02</div>
-        <h4>方案定制</h4>
-        <p>基于诊断结果，定制化训练方案与落地路径，经多轮沟通研讨后定稿，确保方案贴合企业实际</p>
-      </div>
-      <div class="step-dot"></div>
-    </div>
-    <div class="process-step fade-up">
-      <div class="process-content">
-        <div class="step-num">STEP 03</div>
-        <h4>集中训练</h4>
-        <p>面向不同层级开展实战化训练课程，采用场景演练、案例研讨等方式，确保学完即用</p>
-      </div>
-      <div class="step-dot"></div>
-    </div>
-    <div class="process-step fade-up">
-      <div class="process-content">
-        <div class="step-num">STEP 04</div>
-        <h4>陪跑落地</h4>
-        <p>深入日常工作场景，陪跑管理会议、客户拜访、复盘环节，协助把训练成果转化为实际业绩</p>
-      </div>
-      <div class="step-dot"></div>
-    </div>
-    <div class="process-step fade-up">
-      <div class="process-content">
-        <div class="step-num">STEP 05</div>
-        <h4>评估固化</h4>
-        <p>阶段性评估训练效果与业绩变化，输出能力成长报告，固化管理体系，确保长期可持续</p>
-      </div>
-      <div class="step-dot"></div>
-    </div>
-  </div>
+<section id="contact" class="cta">
+ <div class="container">
+  <div class="kicker">START WITH A DIAGNOSIS</div>
+  <h2>企业的增长，取决于领导者的成长</h2>
+  <p>预约 LEADRISE 企业销售领导力诊断，找到团队增长的关键突破点。</p>
+  <a class="btn btn-gold" href="mailto:service@leadrise.com.cn">预约企业诊断</a>
+ </div>
 </section>
+</main>
 
-<!-- ===== 数据成果 ===== -->
-<section class="results section-pad" id="results">
-  <div class="section-head fade-up">
-    <div class="section-tag">成果与数据</div>
-    <h2>用数据说话</h2>
-    <p>每一次合作，都是一份信任与成长</p>
-  </div>
-  <div class="results-grid">
-    <div class="result-card fade-up">
-      <div class="icon">◈</div>
-      <div class="num">10+</div>
-      <div class="label">年专注销售领导力</div>
-    </div>
-    <div class="result-card fade-up">
-      <div class="icon">★</div>
-      <div class="num">200+</div>
-      <div class="label">家服务企业</div>
-    </div>
-    <div class="result-card fade-up">
-      <div class="icon">◆</div>
-      <div class="num">5000+</div>
-      <div class="label">名培训学员</div>
-    </div>
-    <div class="result-card fade-up">
-      <div class="icon">▲</div>
-      <div class="num">30+</div>
-      <div class="label">个覆盖行业</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 客户行业 ===== -->
-<section class="industries section-pad" id="industries">
-  <div class="section-head fade-up">
-    <div class="section-tag">服务行业</div>
-    <h2>覆盖30+行业领域</h2>
-    <p>不同赛道，同样的领导力需求</p>
-  </div>
-  <div class="ind-grid fade-up">
-    <div class="ind-tag">信息技术</div>
-    <div class="ind-tag">金融服务</div>
-    <div class="ind-tag">制造业</div>
-    <div class="ind-tag">医疗健康</div>
-    <div class="ind-tag">教育培训</div>
-    <div class="ind-tag">房地产</div>
-    <div class="ind-tag">建筑工程</div>
-    <div class="ind-tag">物流供应链</div>
-    <div class="ind-tag">新能源</div>
-    <div class="ind-tag">快消品</div>
-    <div class="ind-tag">企业服务</div>
-    <div class="ind-tag">通信运营</div>
-    <div class="ind-tag">汽车交通</div>
-    <div class="ind-tag">农业科技</div>
-    <div class="ind-tag">贸易零售</div>
-    <div class="ind-tag">传媒广告</div>
-    <div class="ind-tag">法律服务</div>
-    <div class="ind-tag">咨询服务</div>
-  </div>
-</section>
-
-<!-- ===== CTA 横幅 ===== -->
-<section class="cta-banner">
-  <div class="cta-deco l"></div>
-  <div class="cta-deco r"></div>
-  <div class="cta-content fade-up">
-    <h3>企业的增长，取决于领导者的成长</h3>
-    <p>如果您正在为销售团队的业绩瓶颈发愁，或者刚从Top Sales晋升为管理者却不知如何带队——领升期待与您深度对话</p>
-    <a href="#contact" class="btn-primary">预约免费领导力诊断</a>
-  </div>
-</section>
-
-<!-- ===== 联系我们 ===== -->
-<section class="contact section-pad" id="contact">
-  <div class="section-head fade-up">
-    <div class="section-tag">联系我们</div>
-    <h2>开启您的领导力诊断之旅</h2>
-    <p>无论是团队培训还是体系搭建，领升期待与您深度对话</p>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-info fade-up">
-      <h3>领升 LEADRISE</h3>
-      <p>我们提供首次免费领导力诊断服务，欢迎企业销售负责人联系我们，共同探讨团队成长路径。</p>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="ci-icon">📍</div>
-          <div class="ci-text">
-            <div class="label">公司地址</div>
-            <div class="value">云南省昆明市（具体地址详询）</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">📞</div>
-          <div class="ci-text">
-            <div class="label">联系电话</div>
-            <div class="value">请通过表单留言预约</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">✉</div>
-          <div class="ci-text">
-            <div class="label">邮箱</div>
-            <div class="value">service@leadrise.com.cn</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">🕐</div>
-          <div class="ci-text">
-            <div class="label">服务时间</div>
-            <div class="value">周一至周五 09:00 - 18:00</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form fade-up" id="contactForm">
-      <h3>预约领导力诊断</h3>
-      <form onsubmit="submitForm(event)">
-        <div class="form-group">
-          <label>您的称呼 *</label>
-          <input type="text" name="name" required placeholder="请输入您的姓名">
-        </div>
-        <div class="form-group">
-          <label>企业名称</label>
-          <input type="text" name="company" placeholder="请输入企业名称">
-        </div>
-        <div class="form-group">
-          <label>联系电话 *</label>
-          <input type="tel" name="phone" required placeholder="请输入手机号码">
-        </div>
-        <div class="form-group">
-          <label>咨询方向</label>
-          <select name="service">
-            <option value="">请选择</option>
-            <option>销售领导力训练</option>
-            <option>高绩效团队打造</option>
-            <option>销售管理体系搭建</option>
-            <option>销售赋能培训</option>
-            <option>销售组织诊断</option>
-            <option>陪跑式落地服务</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>需求描述</label>
-          <textarea name="message" placeholder="简要描述您的团队现状与培训需求"></textarea>
-        </div>
-        <button type="submit">提交预约需求</button>
-      </form>
-      <div class="form-success" id="formSuccess">
-        <div class="check">✓</div>
-        <h3 style="margin-bottom:8px">提交成功！</h3>
-        <p style="color:var(--text-secondary);font-size:14px">我们将在1个工作日内与您联系，请保持电话畅通。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 页脚 ===== -->
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo">
-        <div class="logo-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M15 15 L15 85 L42 85 L42 72 L28 72 L28 28 L42 28 L42 15 Z" fill="#d4af37"/><path d="M52 15 L52 85 L62 85 L62 53 L72 65 L72 80 L82 80 L82 62 L70 50 L82 38 L82 20 L72 20 L72 35 L62 47 L62 15 Z" fill="#f0f4ff"/><path d="M82 70 L70 55 L70 68 L65 62 L65 72 L60 66 L60 76 L55 70 L55 82 L82 82 Z" fill="#d4af37"/></svg></div>
-        <div class="logo-text">
-          <div class="name">领升<span> LEADRISE</span></div>
-          <div class="slogan">培养领导者，打造高绩效销售团队</div>
-        </div>
-      </div>
-      <p>领升LEADRISE，专注销售领导力发展，帮助企业培养能带人、带队、拿结果的销售领导者。LEAD BETTER. RISE HIGHER.</p>
-    </div>
-    <div class="footer-col">
-      <h5>核心服务</h5>
-      <a href="#services">销售领导力训练</a>
-      <a href="#services">高绩效团队打造</a>
-      <a href="#services">销售管理体系</a>
-      <a href="#services">销售赋能培训</a>
-    </div>
-    <div class="footer-col">
-      <h5>快速导航</h5>
-      <a href="#about">关于领升</a>
-      <a href="#philosophy">品牌理念</a>
-      <a href="#courses">课程体系</a>
-      <a href="#process">服务流程</a>
-    </div>
-    <div class="footer-col">
-      <h5>联系方式</h5>
-      <a href="#contact">领导力诊断</a>
-      <a href="#contact">预约咨询</a>
-      <a href="#contact">合作洽谈</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 领升 LEADRISE 版权所有</p>
-    <p class="icp">滇ICP备XXXXXXXX号</p>
-  </div>
+<footer>
+ <div class="container footer">
+  <div>© 2026 LEADRISE 领升企业咨询有限公司</div>
+  <div>service@leadrise.com.cn · 云南省昆明市</div>
+ </div>
 </footer>
-
-<!-- ===== 回到顶部 ===== -->
-<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-
-<script>
-// 导航栏滚动效果
-window.addEventListener('scroll', function() {
-  var navbar = document.getElementById('navbar');
-  var backTop = document.getElementById('backTop');
-  if (window.scrollY > 50) {
-    navbar.style.padding = '12px 5%';
-    navbar.style.background = 'rgba(10,14,26,0.95)';
-  } else {
-    navbar.style.padding = '18px 5%';
-    navbar.style.background = 'rgba(10,14,26,0.85)';
-  }
-  if (window.scrollY > 400) {
-    backTop.classList.add('show');
-  } else {
-    backTop.classList.remove('show');
-  }
-});
-
-// 滚动入场动画
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.fade-up').forEach(function(el) {
-  observer.observe(el);
-});
-
-// 平滑滚动
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-  anchor.addEventListener('click', function(e) {
-    var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-      var navLinks = document.querySelector('.nav-links');
-      if (navLinks.classList.contains('show-mobile')) {
-        navLinks.classList.remove('show-mobile');
-      }
-    }
-  });
-});
-
-// 表单提交
-function submitForm(e) {
-  e.preventDefault();
-  var form = e.target;
-  var formBox = document.getElementById('contactForm');
-  var success = document.getElementById('formSuccess');
-  form.style.display = 'none';
-  success.classList.add('show');
-  setTimeout(function() {
-    form.style.display = 'block';
-    success.classList.remove('show');
-    form.reset();
-  }, 4000);
-}
-
-// 移动端菜单样式
-var style = document.createElement('style');
-style.textContent = '.nav-links.show-mobile{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,14,26,0.98);padding:20px 5%;gap:16px;border-bottom:1px solid var(--border)}';
-document.head.appendChild(style);
-</script>
-
 </body>
 </html>
