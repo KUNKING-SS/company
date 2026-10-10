@@ -3,238 +3,439 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEADRISE 领升｜销售领导力发展专家</title>
-<meta name="description" content="LEADRISE领升，从企业诊断到销售领导力训练与陪跑，帮助成长型企业建立持续增长的销售组织能力。">
+<title>LEADRISE 领升 — 企业经营与人才发展解决方案服务商</title>
+<meta name="description" content="LEADRISE 领升通过企业诊断、管理改善、人才培养与持续陪跑，帮助企业打造更强的领导者、更强的团队和更好的业绩。昆明 · 云南 · 全国。">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#071522;--navy2:#0d2232;--gold:#c9a45c;--white:#f7f8fa;--muted:#aeb9c4;--line:rgba(255,255,255,.12);--card:#10283a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Microsoft YaHei",sans-serif;background:var(--navy);color:var(--white);line-height:1.7}
-a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
-header{position:sticky;top:0;z-index:20;background:rgba(7,21,34,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px;font-weight:700;letter-spacing:1px}.brand img{height:42px;width:auto;object-fit:contain}.brand span{font-size:15px}.menu{display:flex;gap:24px;font-size:14px;color:#dbe2e8}.menu a:hover{color:var(--gold)}
-.btn{display:inline-block;padding:12px 22px;border:1px solid var(--gold);color:var(--gold);border-radius:3px;font-weight:700}.btn.fill{background:var(--gold);color:var(--navy);border-color:var(--gold)}
-.hero{min-height:700px;display:flex;align-items:center;background:radial-gradient(circle at 80% 30%,rgba(201,164,92,.14),transparent 32%),linear-gradient(135deg,#071522,#0b1e2d)}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px;font-weight:700}.hero h1{font-size:58px;line-height:1.12;margin:18px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{font-size:18px;color:var(--muted);max-width:700px}.actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-.hero-card{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:30px;border-radius:8px}.hero-card .big{font-size:38px;color:var(--gold);font-weight:800}.hero-card p{font-size:14px;margin:6px 0 20px}.hero-card .rule{height:1px;background:var(--line);margin:18px 0}
-section{padding:92px 0}.section-head{margin-bottom:42px}.kicker{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:700}.section-head h2{font-size:38px;margin:8px 0}.section-head p{color:var(--muted);max-width:760px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid var(--line);padding:28px;border-radius:7px}.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}.num{color:var(--gold);font-size:14px;font-weight:800}
-.pain{background:#091a28}.pain .card{min-height:185px}.solution{border-top:1px solid var(--line)}.price{font-size:27px;color:var(--gold);font-weight:800;margin:10px 0}.card ul{padding-left:18px;color:#d5dde4;font-size:14px}.card li{margin:7px 0}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.feature-box{border-left:2px solid var(--gold);padding-left:24px}.feature-box h3{margin-top:0;font-size:25px}.feature-box p{color:var(--muted)}
-.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.step{padding:24px 18px;border-top:1px solid var(--gold);position:relative}.step:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;background:var(--gold);border-radius:50%}.step b{display:block;color:var(--gold);font-size:13px;margin-bottom:7px}
-.local{background:linear-gradient(120deg,#0d2232,#071522)}.local h2{font-size:42px}.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.tag{border:1px solid var(--line);padding:8px 14px;color:#dce3e8;font-size:13px}
-.lmhi{border:1px solid rgba(201,164,92,.35);background:linear-gradient(135deg,rgba(201,164,92,.08),rgba(255,255,255,.02))}
-.cta{background:var(--gold);color:var(--navy);text-align:center}.cta p{max-width:720px;margin:10px auto 28px}.cta .btn{border-color:var(--navy);color:var(--navy)}
-footer{padding:40px 0;color:#8d9aa6;border-top:1px solid var(--line);font-size:13px}.footer-grid{display:flex;justify-content:space-between;gap:20px}
-@media(max-width:900px){.menu{display:none}.hero-grid,.feature{grid-template-columns:1fr}.hero h1{font-size:42px}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.hero{min-height:620px}}
-@media(max-width:560px){.wrap{padding:0 18px}.grid4{grid-template-columns:1fr}.hero h1{font-size:36px}section{padding:68px 0}.brand img{height:36px}.hero-card{padding:22px}}
-</style>
+:root{
+  --navy:#050f1c;
+  --navy-2:#0a1828;
+  --navy-3:#10233a;
+  --paper:#f5f3ee;
+  --paper-alt:#edeae2;
+  --ink:#141412;
+  --ink-2:#3d3d3a;
+  --ink-3:#7a7a75;
+  --line:#dcd8cd;
+  --line-soft:#e6e3da;
+  --gold:#c9a15a;
+  --gold-2:#a37f3e;
+  --gold-soft:#dcc08a;
+  --line-dark:rgba(201,161,90,.22);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --serif:'Noto Serif SC',"Songti SC",serif;
+  --sans:'Inter','Noto Sans SC',-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);
+  font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;
+  opacity:0;transition:opacity .6s ease;
+}
+body.ready{opacity:1}
+::selection{background:var(--gold);color:var(--navy)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:#c4c0b4;border-radius:5px}
+a{color:inherit;text-decoration:none}
 
-<style>
-.float-contact{position:fixed;right:20px;bottom:22px;z-index:50;display:flex;gap:8px;flex-direction:column}
-.float-contact a{background:#c9a45c;color:#071522;padding:10px 14px;border-radius:4px;font-size:13px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.25)}
-.float-contact a.alt{background:#10283a;color:#f7f8fa;border:1px solid rgba(201,164,92,.45)}
-.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.faq details{background:#10283a;border:1px solid rgba(255,255,255,.1);padding:18px 20px;border-radius:6px}
-.faq summary{cursor:pointer;font-weight:700}.faq p{color:#aeb9c4;font-size:14px;margin-bottom:0}
-.partner{border:1px solid rgba(201,164,92,.3);background:linear-gradient(135deg,rgba(201,164,92,.08),rgba(255,255,255,.02))}
-.form-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:850px;margin:30px auto 0}
-.form-box input,.form-box select,.form-box textarea{width:100%;padding:13px 14px;background:#fff;color:#17212b;border:0;border-radius:3px;font-size:14px}
-.form-box textarea{min-height:100px;grid-column:1/-1}
-.form-box button{grid-column:1/-1;justify-self:center;padding:13px 30px;border:1px solid #071522;background:#071522;color:#c9a45c;font-weight:800;border-radius:3px;cursor:pointer}
-@media(max-width:700px){.faq,.form-box{grid-template-columns:1fr}.form-box textarea,.form-box button{grid-column:auto}.float-contact{right:12px;bottom:12px}}
+/* reveal */
+.rv{opacity:0;filter:blur(8px);transform:translateY(26px);transition:opacity .9s var(--ease),filter .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;filter:blur(0);transform:none}
+.rv-d1{transition-delay:.12s}.rv-d2{transition-delay:.24s}.rv-d3{transition-delay:.36s}.rv-d4{transition-delay:.48s}
+
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,4vw,56px);height:76px;
+  border-bottom:1px solid transparent;
+  transition:background .4s ease,border-color .4s ease;
+}
+header.scrolled{background:rgba(5,15,28,.9);backdrop-filter:blur(12px);border-color:var(--line-dark)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:34px;width:auto;display:block}
+.brand .cn{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--paper);letter-spacing:.14em;border-left:1px solid var(--line-dark);padding-left:12px}
+nav{display:flex;gap:clamp(18px,3vw,42px)}
+nav a{font-size:13px;letter-spacing:.14em;color:#cfd3d8;position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+nav a:hover{color:#fff}
+nav a:hover::after{width:100%}
+nav a small{display:block;font-size:9px;letter-spacing:.26em;color:#7d8593;line-height:1.2}
+@media(max-width:860px){nav a small{display:none}}
+@media(max-width:640px){nav{gap:16px}nav a{font-size:12px;letter-spacing:.06em}}
+
+/* hero */
+.hero{
+  min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:130px clamp(20px,4vw,56px) clamp(40px,6vh,72px);
+  background:radial-gradient(120% 90% at 78% 8%,var(--navy-3) 0%,var(--navy-2) 42%,var(--navy) 100%);
+  color:var(--paper);overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg svg{width:100%;height:100%}
+.hero-logo{position:absolute;top:16vh;right:clamp(20px,6vw,90px);width:clamp(130px,16vw,230px);opacity:.95;filter:drop-shadow(0 12px 40px rgba(0,0,0,.45))}
+@media(max-width:860px){.hero-logo{position:static;margin-bottom:32px;width:120px}}
+.hero-kicker{display:flex;align-items:center;gap:14px;margin-bottom:clamp(20px,3vh,36px)}
+.hero-kicker .tick{width:44px;height:1px;background:var(--gold)}
+.hero-kicker span{font-size:12px;letter-spacing:.34em;color:var(--gold-soft)}
+.hero h1{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(38px,7.2vw,104px);line-height:1.2;letter-spacing:.02em;max-width:16em;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line>span{display:inline-block;transform:translateY(110%);transition:transform 1s var(--ease)}
+body.ready .hero h1 .line>span{transform:none}
+body.ready .hero h1 .line:nth-child(2)>span{transition-delay:.12s}
+.hero-slogan{margin-top:18px;font-size:13px;letter-spacing:.42em;color:#93a0b0}
+.hero-slogan b{color:var(--gold-soft);font-weight:500}
+.hero-sub{margin-top:clamp(24px,4vh,44px);display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,80px);align-items:flex-end;justify-content:space-between}
+.hero-sub p{max-width:34em;font-size:clamp(14px,1.4vw,17px);color:#c3cad3}
+.hero-tags{display:flex;gap:0;border:1px solid var(--line-dark)}
+.hero-tags div{padding:14px 22px;font-size:13px;letter-spacing:.18em;color:#d8dde3;border-right:1px solid var(--line-dark);white-space:nowrap}
+.hero-tags div:last-child{border-right:none}
+@media(max-width:640px){.hero-tags{flex-wrap:wrap}.hero-tags div{flex:1;text-align:center;padding:12px 8px;font-size:11px}}
+.hero-foot{margin-top:clamp(32px,6vh,64px);padding-top:20px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;font-size:11px;letter-spacing:.3em;color:#7d8593}
+
+/* section base */
+section{padding:clamp(80px,12vh,140px) clamp(20px,4vw,56px)}
+.wrap{max-width:1240px;margin:0 auto}
+.sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:clamp(40px,7vh,72px);flex-wrap:wrap}
+.sec-no{font-size:12px;letter-spacing:.3em;color:var(--gold-2);font-weight:600}
+.sec-title{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3.6vw,44px);letter-spacing:.04em;line-height:1.3}
+.sec-en{font-size:11px;letter-spacing:.32em;color:var(--ink-3);text-transform:uppercase}
+
+/* pain */
+.pain{background:var(--navy);color:var(--paper);position:relative;overflow:hidden}
+.pain::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 10% 100%,rgba(201,161,90,.08),transparent 60%);pointer-events:none}
+.pain .sec-title{color:var(--paper)}
+.pain .sec-en{color:#7d8593}
+.pain-lead{font-family:var(--serif);font-size:clamp(20px,2.6vw,32px);font-weight:600;max-width:24em;line-height:1.6;color:#e9e6de}
+.pain-lead em{font-style:normal;color:var(--gold)}
+.pain-grid{margin-top:clamp(48px,8vh,80px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark)}
+.pain-cell{padding:32px 28px 40px;border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);position:relative;transition:background .4s ease}
+.pain-cell:nth-child(4n){border-right:none}
+.pain-cell:hover{background:rgba(201,161,90,.06)}
+.pain-cell .idx{font-family:var(--serif);font-size:15px;color:var(--gold)}
+.pain-cell h3{font-family:var(--serif);font-size:clamp(18px,1.8vw,23px);font-weight:700;margin:18px 0 12px;letter-spacing:.04em}
+.pain-cell p{font-size:13.5px;color:#9aa4b1;line-height:1.9}
+@media(max-width:960px){.pain-grid{grid-template-columns:repeat(2,1fr)}.pain-cell:nth-child(2n){border-right:none}}
+@media(max-width:560px){.pain-grid{grid-template-columns:1fr}.pain-cell{border-right:none}}
+
+/* method */
+.method-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);margin-bottom:clamp(48px,8vh,80px);align-items:end}
+.method-intro p{color:var(--ink-2);font-size:15px;max-width:36em}
+.method-intro .big{font-family:var(--serif);font-size:clamp(22px,2.8vw,34px);font-weight:700;line-height:1.55;letter-spacing:.03em}
+.steps{border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:120px 1fr 1.2fr;gap:clamp(20px,4vw,64px);padding:clamp(32px,5vh,52px) 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .4s var(--ease)}
+.step:hover{padding-left:12px}
+.step .no{font-family:var(--serif);font-size:clamp(34px,4vw,52px);font-weight:900;color:transparent;-webkit-text-stroke:1px var(--gold-2);line-height:1}
+.step h3{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:.05em}
+.step h3 small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--ink-3);margin-top:8px;font-weight:500}
+.step p{color:var(--ink-2);font-size:14.5px}
+.step ul{list-style:none;margin-top:14px}
+.step li{font-size:13px;color:var(--ink-2);padding:8px 0 8px 18px;border-bottom:1px dashed var(--line-soft);position:relative}
+.step li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;border:1px solid var(--gold-2);transform:rotate(45deg)}
+.step li:last-child{border-bottom:none}
+@media(max-width:860px){.step{grid-template-columns:64px 1fr}.step p,.step ul{grid-column:2}.method-intro{grid-template-columns:1fr}}
+
+/* outcome */
+.outcome{background:var(--paper-alt);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.out-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}
+.out-cell{border-right:1px solid var(--line);padding:36px 32px 44px;min-height:280px;display:flex;flex-direction:column}
+.out-cell .num{font-family:var(--serif);font-size:clamp(44px,5vw,68px);font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.01em}
+.out-cell .num sup{font-size:.45em;color:var(--gold-2);font-weight:700}
+.out-cell h4{font-family:var(--serif);font-size:17px;font-weight:700;margin:22px 0 10px;letter-spacing:.06em}
+.out-cell p{font-size:13.5px;color:var(--ink-2);flex:1}
+@media(max-width:860px){.out-grid{grid-template-columns:1fr}.out-cell{min-height:0}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,96px);align-items:center}
+.about-grid .big{font-family:var(--serif);font-size:clamp(24px,3vw,38px);font-weight:700;line-height:1.6;letter-spacing:.03em}
+.about-grid .big em{font-style:normal;border-bottom:2px solid var(--gold)}
+.about-facts{border-top:1px solid var(--line)}
+.about-facts>div{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);gap:16px}
+.about-facts dt{font-size:12px;letter-spacing:.26em;color:var(--ink-3);white-space:nowrap}
+.about-facts dd{font-family:var(--serif);font-size:clamp(16px,1.6vw,20px);font-weight:600;text-align:right}
+.strengths{margin-top:clamp(48px,8vh,72px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.strength{padding:26px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strength:nth-child(4n){border-right:none}
+.strength h5{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.05em;margin-bottom:8px}
+.strength h5::before{content:"—";color:var(--gold-2);margin-right:8px}
+.strength p{font-size:12.5px;color:var(--ink-3);line-height:1.8}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}.strengths{grid-template-columns:repeat(2,1fr)}.strength:nth-child(2n){border-right:none}}
+@media(max-width:520px){.strengths{grid-template-columns:1fr}.strength{border-right:none}}
+
+/* cta */
+.cta{background:linear-gradient(160deg,var(--navy-2),var(--navy));color:var(--paper);position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-8%;bottom:-30%;width:55%;height:120%;background:radial-gradient(closest-side,rgba(201,161,90,.14),transparent);pointer-events:none}
+.cta-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+.cta h2{font-family:var(--serif);font-weight:900;font-size:clamp(32px,5.4vw,72px);line-height:1.3;letter-spacing:.03em;max-width:15em}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta-row{margin-top:clamp(36px,6vh,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:14px;padding:18px 40px;border:1px solid var(--gold);font-size:14px;letter-spacing:.22em;color:var(--gold-soft);transition:background .35s ease,color .35s ease;cursor:pointer;background:transparent}
+.btn:hover{background:var(--gold);color:var(--navy)}
+.btn .arr{transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(6px)}
+.cta-note{font-size:13px;color:#9aa4b1;letter-spacing:.1em}
+
+/* footer */
+footer{background:var(--navy);color:#9aa4b1;padding:64px clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line-dark)}
+.foot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;align-items:flex-end}
+.foot img{height:64px;width:auto}
+.foot .cn{font-family:var(--serif);font-weight:700;color:#d8dde3;margin-top:12px;letter-spacing:.1em}
+.foot .en-sub{font-size:11px;letter-spacing:.3em;color:var(--gold-soft);margin-top:6px}
+.foot .loc{font-size:13px;letter-spacing:.2em;color:#c3cad3;text-align:right}
+.copy{max-width:1240px;margin:40px auto 0;padding-top:20px;border-top:1px solid var(--line-dark);font-size:11px;letter-spacing:.2em;color:#6c7684;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
-<div class="float-contact">
-  <a href="#diagnosis">预约企业诊断</a>
-  <a class="alt" href="mailto:service@leadrise.com.cn">发送咨询邮件</a>
-</div>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top">
-      <img src="logo.jpg" alt="LEADRISE 领升">
-      <span>LEADRISE · 领升</span>
-    </a>
-    <nav class="menu">
-      <a href="#pain">老板痛点</a><a href="#solutions">解决方案</a><a href="#diagnosis">企业诊断</a><a href="#packages">服务套餐</a><a href="#cases">应用场景</a><a href="#contact">联系我们</a>
-    </nav>
-  </div>
+<header id="hd">
+  <a class="brand" href="#top">
+    <img src="assets/logo-mark.png" alt="LEADRISE">
+    <span class="cn">领升</span>
+  </a>
+  <nav>
+    <a href="#pain">企业之痛<small>CHALLENGES</small></a>
+    <a href="#method">服务体系<small>SERVICES</small></a>
+    <a href="#outcome">价值成果<small>OUTCOMES</small></a>
+    <a href="#about">关于领升<small>ABOUT</small></a>
+    <a href="#contact">联系我们<small>CONTACT</small></a>
+  </nav>
 </header>
 
-<main id="top">
-<section class="hero">
-<div class="wrap hero-grid">
-  <div>
-    <div class="eyebrow">LEAD BETTER. RISE HIGHER.</div>
-    <h1>培养领导者<br><em>打造高绩效销售团队</em></h1>
-    <p>LEADRISE 领升，不是单纯卖培训课程，而是从企业诊断出发，帮助成长型企业建立持续增长的销售组织能力。</p>
-    <div class="actions"><a class="btn fill" href="#diagnosis">预约企业诊断</a><a class="btn" href="#packages">查看服务方案</a></div>
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+      <g stroke="rgba(201,161,90,.18)" stroke-width="1">
+        <path d="M-100 720 C 300 560, 620 760, 900 600 S 1400 480, 1600 560"/>
+        <path d="M-100 760 C 320 610, 640 810, 930 650 S 1420 530, 1600 610" opacity=".7"/>
+        <path d="M-100 800 C 340 660, 660 860, 960 700 S 1440 580, 1600 660" opacity=".45"/>
+      </g>
+      <g>
+        <path d="M940 640 L1180 400" stroke="#c9a15a" stroke-width="1.5"/>
+        <path d="M1180 400 l-46 8 M1180 400 l-8 46" stroke="#c9a15a" stroke-width="1.5"/>
+        <circle cx="940" cy="640" r="4" fill="#c9a15a"/>
+      </g>
+    </svg>
   </div>
-  <div class="hero-card">
-    <div class="big">从“人”到“组织”</div>
-    <p>让优秀销售成为管理者，让管理者成为真正的团队领导者。</p>
-    <div class="rule"></div>
-    <strong>核心定位</strong>
-    <p>销售领导力发展 · 高绩效团队打造 · 销售管理体系 · 销售赋能与陪跑</p>
+  <img class="hero-logo rv" src="assets/logo.png" alt="LEADRISE 领升">
+  <div class="hero-kicker rv"><span class="tick"></span><span>企业经营与人才发展解决方案服务商</span></div>
+  <h1>
+    <span class="line"><span>让企业的增长，</span></span>
+    <span class="line"><span>真正转化为<em>组织的增长</em></span></span>
+  </h1>
+  <div class="hero-slogan rv rv-d1">领越未来 · 升级组织 ｜ <b>Lead Better. Rise Higher.</b></div>
+  <div class="hero-sub">
+    <p class="rv rv-d2">很多企业的问题，不是员工不努力。LEADRISE 领升通过企业诊断、管理改善、人才培养与持续陪跑，帮助企业打造更强的领导者、更强的团队和更好的业绩——把「人」的问题，转化为「经营结果」的改善。</p>
+    <div class="hero-tags rv rv-d3">
+      <div>企业经营</div><div>组织管理</div><div>人才发展</div>
+    </div>
+  </div>
+  <div class="hero-foot rv rv-d4">
+    <span>LEADRISE · KUNMING</span>
+    <span>昆明 · 云南 · 全国</span>
   </div>
 </div>
-</section>
 
-<section id="pain" class="pain">
-<div class="wrap">
-  <div class="section-head"><div class="kicker">FOR BUSINESS OWNERS</div><h2>很多企业的问题，不是“没有销售”</h2><p>而是销售组织没有形成稳定、可复制、可持续的能力。</p></div>
-  <div class="grid4">
-    <div class="card"><div class="num">01</div><h3>业绩靠个人</h3><p>优秀销售离开后，客户与业绩容易受到影响，团队难以复制个人能力。</p></div>
-    <div class="card"><div class="num">02</div><h3>主管不会带人</h3><p>从销售高手转为管理者后，仍然习惯亲自做业务，而不是通过团队获得结果。</p></div>
-    <div class="card"><div class="num">03</div><h3>过程不可控</h3><p>目标、客户、商机与跟进过程缺少统一机制，管理依赖经验和感觉。</p></div>
-    <div class="card"><div class="num">04</div><h3>培训难落地</h3><p>课堂结束后缺少行动、复盘和陪跑，知识难以转化为日常管理行为。</p></div>
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no" style="color:var(--gold)">01</span>
+      <h2 class="sec-title">很多企业的问题，不是员工不努力</h2>
+      <span class="sec-en">The Real Challenges</span>
+    </div>
+    <p class="pain-lead rv rv-d1">业绩停滞、执行力差、骨干流失……表面是「人」的问题，<em>根源往往在组织</em>。当以下四件事缺位，努力就会偏离结果。</p>
+    <div class="pain-grid">
+      <div class="pain-cell rv">
+        <span class="idx">Ⅰ</span>
+        <h3>目标没有对齐</h3>
+        <p>战略停留在老板的脑海里，部门各说各话，员工不知道自己的工作与经营结果有什么关系。</p>
+      </div>
+      <div class="pain-cell rv rv-d1">
+        <span class="idx">Ⅱ</span>
+        <h3>管理没有抓手</h3>
+        <p>管理者凭经验带团队，缺流程、缺工具、缺机制，管得累、放得乱，组织效率层层衰减。</p>
+      </div>
+      <div class="pain-cell rv rv-d2">
+        <span class="idx">Ⅲ</span>
+        <h3>激励没有对准结果</h3>
+        <p>考核与激励和业务结果脱节，干好干坏差别不大，优秀的人留不住，平庸的人赶不走。</p>
+      </div>
+      <div class="pain-cell rv rv-d3">
+        <span class="idx">Ⅳ</span>
+        <h3>人才没有持续成长</h3>
+        <p>培训做了不少，能力没有沉淀；关键岗位后继无人，企业的增长始终受制于人的天花板。</p>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
-<section id="solutions">
-<div class="wrap">
- <div class="section-head"><div class="kicker">LEADRISE SOLUTIONS</div><h2>从诊断开始，解决真正的业务问题</h2><p>围绕销售组织、管理者与团队能力，形成“诊断—训练—行动—复盘”的闭环。</p></div>
- <div class="feature">
-   <div class="feature-box"><h3>不是卖一堂课</h3><p>我们关注培训之后发生什么：管理者是否改变、团队是否行动、过程是否可管理、能力是否能够复制。</p></div>
-   <div class="feature-box"><h3>而是建立一套能力</h3><p>将个人能力沉淀为团队方法，将管理经验沉淀为机制，让企业逐步形成自己的销售组织能力。</p></div>
- </div>
-</div>
+<!-- METHOD -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no">02</span>
+      <h2 class="sec-title">四位一体，把人的问题转化为经营结果</h2>
+      <span class="sec-en">How We Work</span>
+    </div>
+    <div class="method-intro">
+      <p class="big rv">不做一次性培训，<br>只做能落地的组织改善。</p>
+      <p class="rv rv-d1">LEADRISE 以「诊断 — 改善 — 培养 — 陪跑」为闭环：先看清企业真实的问题，再切入管理机制的改善，同步培养支撑增长的人才梯队，并以长期陪跑确保改变真正发生、成果真正沉淀。</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="no">01</div>
+        <h3>企业诊断<small>DIAGNOSIS</small></h3>
+        <div>
+          <p>深入经营一线，系统扫描战略、组织、机制与人才四个维度，找到制约增长的关键症结，而非表面症状。</p>
+          <ul>
+            <li>经营与组织现状全面扫描</li>
+            <li>核心管理团队深度访谈</li>
+            <li>问题优先级与改善路径报告</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="no">02</div>
+        <h3>管理改善<small>MANAGEMENT</small></h3>
+        <div>
+          <p>围绕经营目标，搭建目标对齐、过程管理与绩效激励机制，让管理者有抓手、让执行有章法。</p>
+          <ul>
+            <li>战略目标解码与目标对齐体系</li>
+            <li>绩效与激励机制设计</li>
+            <li>管理流程与会议机制优化</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="no">03</div>
+        <h3>人才培养<small>TALENT</small></h3>
+        <div>
+          <p>基于业务需要定义人才标准，分层培养管理者与核心骨干，让组织能力跟得上业务的增长速度。</p>
+          <ul>
+            <li>关键岗位人才盘点与梯队建设</li>
+            <li>管理者领导力发展项目</li>
+            <li>内训体系与学习机制搭建</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="no">04</div>
+        <h3>持续陪跑<small>PARTNERSHIP</small></h3>
+        <div>
+          <p>以季度为周期的长期陪伴，跟进行动落地、复盘经营数据、迭代管理机制，确保改善不止于方案。</p>
+          <ul>
+            <li>定期经营复盘与行动跟进</li>
+            <li>管理团队一对一辅导</li>
+            <li>机制迭代与成果固化</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="diagnosis" class="pain">
-<div class="wrap">
- <div class="section-head"><div class="kicker">FREE BUSINESS DIAGNOSIS</div><h2>先诊断，再训练</h2><p>先找到问题，再决定培训什么。初步沟通后，可围绕销售目标、团队结构、管理流程、人才能力等维度形成诊断方向。</p></div>
- <div class="grid3">
-  <div class="card"><div class="num">01</div><h3>业务现状</h3><p>了解企业业务模式、销售目标、客户结构及当前增长压力。</p></div>
-  <div class="card"><div class="num">02</div><h3>团队能力</h3><p>观察销售人员与管理者在目标、客户、过程、沟通和带队方面的能力表现。</p></div>
-  <div class="card"><div class="num">03</div><h3>管理机制</h3><p>梳理目标管理、过程管理、复盘机制与人才培养的现状。</p></div>
- </div>
-</div>
+<!-- OUTCOME -->
+<section class="outcome" id="outcome">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no">03</span>
+      <h2 class="sec-title">我们交付的，是看得见的改变</h2>
+      <span class="sec-en">What Changes</span>
+    </div>
+    <div class="out-grid">
+      <div class="out-cell rv">
+        <div class="num">1<sup>套</sup></div>
+        <h4>对齐的经营目标体系</h4>
+        <p>从公司战略到部门目标再到个人行动层层对齐，让每个人的努力都指向同一个经营结果。</p>
+      </div>
+      <div class="out-cell rv rv-d1">
+        <div class="num">1<sup>支</sup></div>
+        <h4>能打仗的管理团队</h4>
+        <p>管理者从「救火队员」成长为「带队者」，有方法、有工具、有机制地驱动团队拿到结果。</p>
+      </div>
+      <div class="out-cell rv rv-d2">
+        <div class="num">1<sup>条</sup></div>
+        <h4>可持续的人才梯队</h4>
+        <p>关键岗位有人可用、后继有人，组织的增长不再依赖个别能人，而成为可复制的能力。</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="lmhi">
-<div class="wrap">
- <div class="section-head"><div class="kicker">LMHI · CONCEPT</div><h2>LMHI 企业管理健康度</h2><p>LEADRISE 正在探索以管理与领导力维度衡量企业组织状态的指标体系，可作为企业诊断与长期改善的工具。</p></div>
- <div class="card lmhi">
-  <h3>LMHI = Leadership & Management Health Index</h3>
-  <p>拟围绕领导力、团队能力、销售过程、组织机制等维度建立企业管理健康度观察框架。当前属于项目概念阶段，具体指标、权重、算法及行业基准将在后续研究与实践中进一步确定。</p>
- </div>
-</div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no">04</span>
+      <h2 class="sec-title">关于领升</h2>
+      <span class="sec-en">About LEADRISE</span>
+    </div>
+    <div class="about-grid">
+      <p class="big rv">LEADRISE 领升，是一家专注于<em>企业经营与人才发展</em>的解决方案服务商。我们的使命，是帮助企业打造更强的领导者、更强的团队和更好的业绩。</p>
+      <dl class="about-facts rv rv-d1">
+        <div><dt>定位</dt><dd>企业经营与人才发展解决方案服务商</dd></div>
+        <div><dt>领域</dt><dd>企业经营 · 组织管理 · 人才发展</dd></div>
+        <div><dt>方式</dt><dd>诊断 + 改善 + 培养 + 陪跑</dd></div>
+        <div><dt>服务范围</dt><dd>昆明 · 云南 · 全国</dd></div>
+      </dl>
+    </div>
+    <div class="strengths">
+      <div class="strength rv"><h5>行业实战经验</h5><p>顾问与讲师均来自企业经营一线，方案源于实战、用于实战。</p></div>
+      <div class="strength rv rv-d1"><h5>专业讲师团队</h5><p>管理、销售、服务多领域专职讲师，确保培训内容专业且可落地。</p></div>
+      <div class="strength rv rv-d2"><h5>定制化解决方案</h5><p>拒绝模板化课程，每一个方案都基于企业真实诊断量身设计。</p></div>
+      <div class="strength rv rv-d3"><h5>持续跟踪服务</h5><p>培训结束后持续复盘与陪跑，确保成果固化、改善可持续。</p></div>
+    </div>
+  </div>
 </section>
 
-<section id="packages" class="solution">
-<div class="wrap">
- <div class="section-head"><div class="kicker">SERVICE PACKAGES</div><h2>三档企业服务方案</h2><p>以下为官网展示用的方案框架与建议起始价格，正式项目根据企业规模、需求和服务范围进行定制。</p></div>
- <div class="grid3">
-  <div class="card"><div class="num">01 · 基础训练</div><h3>销售能力基础训练</h3><div class="price">¥19,800 起</div><ul><li>企业需求访谈</li><li>销售能力基础训练</li><li>1次管理复盘</li><li>项目总结报告</li></ul><a class="btn" href="#contact">咨询方案</a></div>
-  <div class="card"><div class="num">02 · 团队提升</div><h3>高绩效团队方案</h3><div class="price">¥39,800 起</div><ul><li>企业销售组织诊断</li><li>销售团队训练</li><li>管理者训练</li><li>行动计划与复盘</li><li>阶段性陪跑</li></ul><a class="btn" href="#contact">咨询方案</a></div>
-  <div class="card"><div class="num">03 · 组织升级</div><h3>销售组织升级方案</h3><div class="price">¥68,000 起</div><ul><li>组织与销售体系诊断</li><li>领导力发展项目</li><li>团队能力训练</li><li>管理机制设计</li><li>3个月陪跑复盘</li></ul><a class="btn" href="#contact">咨询方案</a></div>
- </div>
-</div>
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div class="sec-head rv">
+      <span class="sec-no" style="color:var(--gold)">05</span>
+      <span class="sec-en" style="color:#7d8593">Start the Conversation</span>
+    </div>
+    <h2 class="rv">从一次<em>企业诊断</em>开始，<br>看清增长的真实瓶颈。</h2>
+    <div class="cta-row rv rv-d1">
+      <a class="btn" href="mailto:contact@leadrise.cn">预约企业诊断 <span class="arr">→</span></a>
+      <span class="cta-note">昆明 · 云南 · 全国 ｜ 服务团队将在 1 个工作日内与您联系</span>
+    </div>
+  </div>
 </section>
-
-<section id="cases" class="pain">
-<div class="wrap">
- <div class="section-head"><div class="kicker">BUSINESS SCENARIOS</div><h2>适用于不同成长阶段的企业</h2><p>根据企业实际业务场景组合训练、诊断与陪跑内容。</p></div>
- <div class="grid4">
-  <div class="card"><h3>酒店与文旅</h3><p>围绕营收目标、销售团队、客户开发与管理者能力提升。</p></div>
-  <div class="card"><h3>企业服务</h3><p>围绕大客户开发、复杂销售、决策链与销售管理。</p></div>
-  <div class="card"><h3>贸易与零售</h3><p>围绕销售流程、团队目标、客户经营与复盘机制。</p></div>
-  <div class="card"><h3>成长型中小企业</h3><p>围绕老板、销售负责人和核心团队建立可复制的增长能力。</p></div>
- </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
- <div class="section-head"><div class="kicker">LEADERSHIP DEVELOPMENT</div><h2>三层销售领导力课程体系</h2><p>从一线销售基本功，到大客户攻单，再到销售团队管理，逐级完成能力跃迁。</p></div>
- <div class="grid3">
-  <div class="card"><div class="num">L1 · 基础级</div><h3>新兵营 · 销售基本功</h3><p>适合新销售。聚焦销售心态、客户沟通、需求发现、异议处理、成交与时间管理。</p></div>
-  <div class="card"><div class="num">L2 · 进阶级</div><h3>骨干班 · 大客户攻单</h3><p>适合有一定经验的销售。聚焦大客户策略、复杂销售、决策链、竞争分析与价值呈现。</p></div>
-  <div class="card"><div class="num">L3 · 将帅营</div><h3>销售团队管理</h3><p>面向销售主管、经理与负责人，聚焦目标、过程、辅导、复盘和团队管理能力。</p></div>
- </div>
-</div>
-</section>
-
-<section class="local" id="local">
-<div class="wrap">
- <div class="kicker">KUNMING · YUNNAN</div>
- <h2>从昆明出发，服务成长型企业</h2>
- <p style="color:var(--muted);max-width:720px">聚焦昆明及云南企业市场，深入理解本地企业经营场景，为企业家、销售负责人和管理团队提供诊断、训练与陪跑服务。</p>
- <div class="tags"><span class="tag">昆明企业</span><span class="tag">中小企业</span><span class="tag">销售团队</span><span class="tag">企业家</span><span class="tag">管理者</span></div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
- <div class="section-head"><div class="kicker">OUR JOURNEY</div><h2>从第一次沟通，到持续改善</h2></div>
- <div class="timeline">
-  <div class="step"><b>01</b>免费初步沟通</div>
-  <div class="step"><b>02</b>销售组织诊断</div>
-  <div class="step"><b>03</b>项目方案</div>
-  <div class="step"><b>04</b>项目实施</div>
-  <div class="step"><b>05</b>复盘与优化</div>
- </div>
-</div>
-</section>
-
-
-<section>
-<div class="wrap">
- <div class="section-head"><div class="kicker">STRATEGIC PARTNERSHIP</div><h2>LEADRISE × 众行培训</h2>
- <p>围绕企业客户开发与培训项目合作，探索“课程资源 + 本地客户开发 + 企业诊断 + 项目交付”的合作模式。</p></div>
- <div class="card partner">
-   <h3>合作方向</h3>
-   <p>LEADRISE 负责本地企业客户触达、需求沟通与前端诊断；结合合作方课程与专家资源，为企业客户提供更完整的培训解决方案。具体合作边界、产品、价格与结算方式以双方正式协议为准。</p>
- </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="section-head"><div class="kicker">FAQ</div><h2>企业客户常见问题</h2></div>
-<div class="faq">
-<details><summary>LEADRISE 只做培训吗？</summary><p>定位不仅是课程培训，也包括企业诊断、销售领导力训练、团队能力建设和阶段性陪跑。</p></details>
-<details><summary>企业规模不大也可以做吗？</summary><p>可以根据企业规模、团队人数和实际问题选择合适的项目范围，正式方案以诊断和沟通结果为基础。</p></details>
-<details><summary>第一次沟通需要准备什么？</summary><p>可准备企业基本情况、销售团队规模、当前销售目标及最希望解决的问题。</p></details>
-<details><summary>服务价格是否固定？</summary><p>网站展示的是方案框架与建议起始价格，正式项目会根据服务内容、人数和周期确定。</p></details>
-</div></div>
-</section>
-<section id="contact" class="cta">
-<div class="wrap">
- <div class="kicker">START WITH A DIAGNOSIS</div>
- <h2>企业的增长，取决于领导者与组织能力的成长</h2>
- <p>如果您正在面对销售增长、团队管理、人才培养或销售体系问题，欢迎与 LEADRISE 进行一次初步沟通。</p>
- <a class="btn" href="mailto:service@leadrise.com.cn?subject=LEADRISE企业诊断咨询">预约企业诊断</a>
-<form class="form-box" action="mailto:service@leadrise.com.cn" method="post" enctype="text/plain">
-<input name="company" placeholder="企业名称" required>
-<input name="name" placeholder="联系人" required>
-<input name="phone" placeholder="联系电话" required>
-<select name="need">
-<option value="">请选择主要需求</option>
-<option>销售团队训练</option>
-<option>销售管理者训练</option>
-<option>企业销售组织诊断</option>
-<option>大客户销售</option>
-<option>销售体系/机制建设</option>
-<option>其他</option>
-</select>
-<textarea name="message" placeholder="请简单描述目前最希望解决的问题"></textarea>
-<button type="submit">提交企业诊断申请</button>
-</form>
-
-</div>
-</section>
-</main>
 
 <footer>
-<div class="wrap footer-grid">
-<div><strong>LEADRISE · 领升</strong><br>销售领导力发展专家</div>
-<div>云南省昆明市（具体地址详询）<br>service@leadrise.com.cn · 周一至周五 09:00–18:00</div>
-<div>© 2026 领升 LEADRISE</div>
-</div>
+  <div class="foot">
+    <div>
+      <img src="assets/logo.png" alt="LEADRISE 领升">
+      <div class="cn">领升 · 企业经营与人才发展解决方案服务商</div>
+      <div class="en-sub">LEAD BETTER. RISE HIGHER.</div>
+    </div>
+    <div class="loc">昆明 KUNMING ｜ 云南 YUNNAN ｜ 全国 CHINA</div>
+  </div>
+  <div class="copy">
+    <span>© 2026 LEADRISE 领升企业咨询有限公司</span>
+    <span>领越未来 · 升级组织</span>
+  </div>
 </footer>
+
+<script>
+window.addEventListener('load',()=>document.body.classList.add('ready'));
+const hd=document.getElementById('hd');
+hd.classList.add('scrolled'); // header stays on navy bar over light sections
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
