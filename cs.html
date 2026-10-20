@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LEADRISE LMHI 1.0 在线测评原型</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#182433;font-family:Arial,"Microsoft YaHei",sans-serif;line-height:1.6}
+main{max-width:850px;margin:auto;padding:16px}header{background:#17365D;color:white;padding:22px;border-radius:14px}header small{color:#e2c98c}section{background:white;padding:20px;border-radius:14px;margin:14px 0;box-shadow:0 2px 12px #0000000b}
+h1{margin:0;font-size:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label.field{display:block;font-weight:600}input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;margin-top:5px;font-size:15px}
+.q{border-top:1px solid #e5e7eb;padding:15px 0}.options{display:flex;gap:7px;flex-wrap:wrap}.options label{display:flex;align-items:center;gap:4px;border:1px solid #cbd5e1;padding:7px 10px;border-radius:8px;font-size:14px}.options input{width:auto;margin:0}
+button{background:#17365D;color:white;border:0;border-radius:8px;padding:12px 18px;font-size:16px;cursor:pointer;margin:5px 5px 0 0}.muted{color:#5d6875;font-size:13px}.score{font-size:36px;color:#9a773c;font-weight:bold}.bar{height:9px;background:#e5e7eb;border-radius:8px;overflow:hidden}.bar span{display:block;height:100%;background:#b08d57}.dim{padding:10px 0;border-bottom:1px solid #e5e7eb}.hide{display:none}.callout{background:#f7f4ed;padding:14px;border-radius:10px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}section{padding:15px}}
+@media print{body{background:white}main{max-width:none;padding:0}header,section{box-shadow:none;border:1px solid #ddd;break-inside:avoid}#intro,#survey,.noprint{display:none!important}#report{display:block!important}}
+</style></head><body><main>
+<header><small>LEADRISE 领升 · 改善管理，提升业绩</small><h1>LMHI 1.0 企业管理健康度快速筛查</h1><div>用12道问题，识别值得进一步核验的管理风险</div></header>
+<section id="intro"><h2>企业基本信息</h2><div class="grid">
+<label class="field">企业名称<input id="company" placeholder="可填写企业名称"></label>
+<label class="field">填写日期<input id="date" type="date"></label>
+<label class="field">填写人/角色<input id="respondent" placeholder="老板/负责人/管理者"></label>
+<label class="field">所属行业<select id="industry"><option value="">请选择</option><option>酒店/文旅</option><option>销售型企业</option><option>生产制造</option><option>其他服务业</option></select></label>
+<label class="field">企业规模<select id="size"><option value="">请选择</option><option>30人以下</option><option>31–100人</option><option>101–300人</option><option>300人以上</option></select></label>
+<label class="field">最想解决的问题<select id="focus"><option value="">请选择</option><option>营收</option><option>执行</option><option>离职</option><option>管理能力</option><option>激励</option><option>协同</option></select></label></div>
+<p class="muted">评分：1=基本没有做到；2=偶尔做到；3=部分做到但不稳定；4=大部分时候做到；5=持续做到且有事实/数据证明；N/A=不适用或无法判断。</p>
+<button onclick="start()">开始测评</button></section>
+<section id="survey" class="hide"><h2>快速筛查问题</h2><p class="muted">请按过去3个月的实际情况作答。所有题目均需选择1–5或N/A。</p><div id="qs"></div><button onclick="submitTest()">生成测评结果</button></section>
+<section id="report" class="hide"><div class="noprint"><button onclick="window.print()">打印 / 保存为 PDF</button><button onclick="downloadCSV()">导出答题 CSV</button><button onclick="location.reload()">重新测评</button></div>
+<h2>LEADRISE LMHI 1.0 · 企业管理健康度筛查报告</h2><p id="meta"></p><div class="callout"><div>快速筛查均分（1–5）</div><div class="score" id="avg"></div><div id="band"></div><p class="muted">此结果用于初步自查与管理讨论，不替代正式诊断。</p></div>
+<h3>六维度结果</h3><div id="dims"></div><h3>优先核验方向</h3><ol id="priorities"></ol>
+<h3>建议下一步</h3><ul><li>与企业负责人核实低分题对应的具体事实与影响。</li><li>结合营收、利润、回款、客户满意度、员工流失或执行效率等经营数据进行验证。</li><li>经访谈和数据核验后，再确定是否开展正式LMHI诊断或30天行动学习项目。</li></ul>
+<p class="muted">评分方法：综合均分=所有有效题得分之和÷有效题数；N/A不计入分母。维度分数=(该维度有效题均分−1)÷4×100。分级为内部试点参考，非行业常模或企业排名。</p>
+<p><b>LEADRISE 领升｜改善管理，提升业绩</b><br>CEO@leadrise.com.cn · www.leadrise.com.cn</p></section>
+<p class="muted">原型说明：此 HTML 可在浏览器本地运行，答题数据不会自动上传或保存到领升服务器。要供客户微信扫码在线填写并集中收集数据，需要部署到网站或接入在线问卷平台。</p>
+</main><script>
+const questions=[{"code": "D1", "dim": "战略与经营", "text": "企业有明确的经营目标，并定期检查收入、利润等关键指标。"}, {"code": "D1", "dim": "战略与经营", "text": "管理层能找到影响业绩的主要原因，并据此调整行动。"}, {"code": "D2", "dim": "组织与管理", "text": "关键工作有明确的负责人、权限和完成标准。"}, {"code": "D2", "dim": "组织与管理", "text": "老板不必事事亲自处理，管理团队也能推动日常业务。"}, {"code": "D3", "dim": "销售与客户", "text": "企业有持续开发客户的方法，并跟踪线索到成交的全过程。"}, {"code": "D3", "dim": "销售与客户", "text": "企业会分析客户流失、丢单及回款问题，并采取改善行动。"}, {"code": "D4", "dim": "人才与管理者", "text": "管理者能辅导员工、解决工作问题，而不只是下达任务。"}, {"code": "D4", "dim": "人才与管理者", "text": "企业会分析员工主动离职原因，并采取有针对性的措施。"}, {"code": "D5", "dim": "绩效与激励", "text": "员工清楚自己的考核标准，且考核与经营目标一致。"}, {"code": "D5", "dim": "绩效与激励", "text": "奖励机制兼顾收入、利润、回款或客户质量，而非只看单一指标。"}, {"code": "D6", "dim": "执行与协同", "text": "重要任务有负责人、期限，并定期检查是否完成。"}, {"code": "D6", "dim": "执行与协同", "text": "出现问题后，企业会分析原因、落实改进，并检查是否真正解决。"}];
+let csvRows=[];
+function start(){document.getElementById('intro').classList.add('hide');document.getElementById('survey').classList.remove('hide');document.getElementById('qs').innerHTML=questions.map((q,i)=>`<div class="q"><b>${i+1}. ${q.text}</b><div class="muted">${q.code} · ${q.dim}</div><div class="options">${[1,2,3,4,5,'N/A'].map(v=>`<label><input type="radio" name="q${i}" value="${v}"> ${v}</label>`).join('')}</div></div>`).join('');window.scrollTo(0,0)}
+function submitTest(){
+ const answers=[];
+ for(let i=0;i<questions.length;i++){const el=document.querySelector(`input[name="q${i}"]:checked`);if(!el){alert('请完成第'+(i+1)+'题后再提交。');return}answers.push(el.value==='N/A'?'N/A':Number(el.value))}
+ const valid=answers.filter(v=>typeof v==='number');if(!valid.length){alert('至少需要一个有效评分。');return}
+ const avg=valid.reduce((a,b)=>a+b,0)/valid.length;
+ const band=avg>=4?'相对稳健':avg>=3.2?'部分机制需要关注':avg>=2.4?'存在较明显改善空间':'建议优先核验';
+ const dims=[...new Set(questions.map(q=>q.code))].map(code=>{const qs=questions.map((q,i)=>({...q,a:answers[i]})).filter(q=>q.code===code&&typeof q.a==='number');const mean=qs.length?qs.reduce((s,q)=>s+q.a,0)/qs.length:null;return {code,name:questions.find(q=>q.code===code).dim,mean,score:mean===null?null:(mean-1)/4*100}});
+ document.getElementById('meta').textContent='企业：'+(document.getElementById('company').value||'未填写')+'｜日期：'+(document.getElementById('date').value||new Date().toISOString().slice(0,10))+'｜行业：'+(document.getElementById('industry').value||'未填写')+'｜规模：'+(document.getElementById('size').value||'未填写');
+ document.getElementById('avg').textContent=avg.toFixed(2);document.getElementById('band').textContent=band+'（内部试点参考）';
+ document.getElementById('dims').innerHTML=dims.map(d=>`<div class="dim"><b>${d.code} · ${d.name}</b>：${d.score===null?'无有效数据':d.score.toFixed(1)+'/100'}${d.score===null?'':`<div class="bar"><span style="width:${d.score}%"></span></div>`}</div>`).join('');
+ const priority=dims.filter(d=>d.mean!==null).sort((a,b)=>a.mean-b.mean).slice(0,2);
+ document.getElementById('priorities').innerHTML=priority.map(d=>`<li>${d.name}（${d.score.toFixed(1)}/100）：建议访谈核实对应问题，不直接将低分视为根因。</li>`).join('');
+ csvRows=[['题号','维度代码','管理维度','题目','答案'],...questions.map((q,i)=>[i+1,q.code,q.dim,q.text,answers[i]])];
+ document.getElementById('survey').classList.add('hide');document.getElementById('report').classList.remove('hide');window.scrollTo(0,0);
+}
+function downloadCSV(){const csv=csvRows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LEADRISE_LMHI_1.0_答题数据.csv';a.click();URL.revokeObjectURL(a.href)}
+</script></body></html>
